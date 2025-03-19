@@ -1,0 +1,346 @@
+2025-03-19 19:27:30,204 - root - INFO - Starting MongoDB to Neo4j sync service
+2025-03-19 19:27:30,204 - root - INFO - Sync interval: 5 minutes
+2025-03-19 19:27:30,204 - root - INFO - Starting full sync job at 2025-03-19 19:27:30.204774
+2025-03-19 19:27:36,698 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 19:27:36,803 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 19:27:36,813 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 19:27:36,814 - root - INFO - Extracting data from MongoDB...
+2025-03-19 19:27:43,347 - src.etl.extract - INFO - Extracted 50 records from Person
+2025-03-19 19:27:44,571 - src.etl.extract - INFO - Extracted 10 records from Company
+2025-03-19 19:27:45,668 - src.etl.extract - INFO - Extracted 93 records from Loan
+2025-03-19 19:27:46,673 - src.etl.extract - INFO - Extracted 57 records from PrimaryApplicant
+2025-03-19 19:27:47,720 - src.etl.extract - INFO - Extracted 93 records from Coapplicant
+2025-03-19 19:27:48,908 - src.etl.extract - INFO - Extracted 183 records from Reference
+2025-03-19 19:27:48,917 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 19:28:43,278 - src.etl.load - INFO - Loaded 50 Person nodes
+2025-03-19 19:28:50,436 - src.spark.session - INFO - Updated sync timestamp for Person to 2025-03-19T13:58:43.279625Z
+2025-03-19 19:28:51,953 - src.etl.load - INFO - Loaded 93 Loan nodes
+2025-03-19 19:28:58,676 - src.spark.session - INFO - Updated sync timestamp for Loan to 2025-03-19T13:58:51.953824Z
+2025-03-19 19:29:02,015 - src.etl.load - INFO - Loaded 10 Company nodes
+2025-03-19 19:29:07,808 - src.spark.session - INFO - Updated sync timestamp for Company to 2025-03-19T13:59:02.015418Z
+2025-03-19 19:29:07,808 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 19:29:11,170 - src.etl.load - INFO - Created 93 PrimaryApplicant-Loan relationships
+2025-03-19 19:29:17,742 - src.spark.session - INFO - Updated sync timestamp for PrimaryApplicant to 2025-03-19T13:59:11.170873Z
+2025-03-19 19:29:21,283 - src.etl.load - INFO - Created 93 Loan-CoApplicant relationships
+2025-03-19 19:29:26,741 - src.spark.session - INFO - Updated sync timestamp for Coapplicant to 2025-03-19T13:59:21.283768Z
+2025-03-19 19:29:30,175 - src.etl.load - INFO - Created 183 Loan-Reference relationships
+2025-03-19 19:29:35,937 - src.spark.session - INFO - Updated sync timestamp for Reference to 2025-03-19T13:59:30.175760Z
+2025-03-19 19:29:43,097 - src.etl.load - INFO - Created 50 Person-Company relationships
+2025-03-19 19:29:43,097 - root - INFO - Sync job completed in 132.89 seconds
+2025-03-19 19:29:43,098 - root - INFO - Nodes loaded: 50 Persons, 93 Loans, 10 Companies
+2025-03-19 19:29:43,098 - root - INFO - Relationships loaded: 93 Primary, 93 CoApplicant, 183 Reference, 50 Company
+2025-03-19 19:34:44,552 - root - INFO - Starting incremental sync job at 2025-03-19 19:34:44.552212
+2025-03-19 19:34:45,344 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 19:34:45,349 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 19:34:45,364 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 19:34:45,365 - root - INFO - Extracting data from MongoDB...
+2025-03-19 19:34:52,222 - src.etl.extract - INFO - Extracting Person data modified since 2025-03-19T13:02:21.772290Z
+2025-03-19 19:34:52,371 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `updatedAt` cannot be resolved. Did you mean one of the following? [`address`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('updatedAt > 2025-03-19T13:02:21.772290Z)
++- Relation [_id#2957,aadhar#2958,address#2959,companyId#2960,dateOfBirth#2961,email#2962,income#2963,name#2964,pan#2965,personId#2966,phone#2967,position#2968,roles#2969,yearsEmployed#2970] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 19:34:59,027 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 19:34:59,047 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `updatedAt` cannot be resolved. Did you mean one of the following? [`address`, `name`, `phone`, `_id`, `founded`].;
+'Filter ('updatedAt > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#3002,address#3003,companyId#3004,founded#3005,gst_number#3006,name#3007,phone#3008,sector#3009,website#3010] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 19:35:04,975 - src.etl.extract - INFO - Extracting Loan data modified since 2025-03-18T18:53:25.663309Z
+2025-03-19 19:35:04,990 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `updatedAt` cannot be resolved. Did you mean one of the following? [`loanId`, `status`, `term`, `_id`, `amount`].;
+'Filter ('updatedAt > 2025-03-18T18:53:25.663309Z)
++- Relation [_id#3037,amount#3038,applicationDate#3039,coapplicantId#3040,decisionDate#3041,interestRate#3042,loanId#3043,loanType#3044,primaryApplicantId#3045,references#3046,status#3047,term#3048] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 19:35:11,078 - src.etl.extract - INFO - Extracting PrimaryApplicant data modified since 2025-03-18T18:53:45.323152Z
+2025-03-19 19:35:11,095 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `updatedAt` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `loans`, `personId`].;
+'Filter ('updatedAt > 2025-03-18T18:53:45.323152Z)
++- Relation [_id#3078,isCoApplicantFor#3079,isReferenceFor#3080,loans#3081,name#3082,pan#3083,personId#3084,primaryApplicantId#3085] MongoRelation(MongoRDD[69] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(isCoApplicantFor,ArrayType(StringType,true),true),StructField(isReferenceFor,ArrayType(StringType,true),true),StructField(loans,ArrayType(StringType,true),true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(primaryApplicantId,StringType,true))))
+
+2025-03-19 19:35:16,965 - src.etl.extract - INFO - Extracting Coapplicant data modified since 2025-03-18T18:53:54.899035Z
+2025-03-19 19:35:16,991 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `updatedAt` cannot be resolved. Did you mean one of the following? [`loanId`, `name`, `pan`, `_id`, `linkedTo`].;
+'Filter ('updatedAt > 2025-03-18T18:53:54.899035Z)
++- Relation [_id#3111,coApplicantId#3112,linkedTo#3113,loanId#3114,name#3115,pan#3116,personId#3117,relationToPrimary#3118] MongoRelation(MongoRDD[92] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(coApplicantId,StringType,true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(relationToPrimary,StringType,true))))
+
+2025-03-19 19:35:23,035 - src.etl.extract - INFO - Extracting Reference data modified since 2025-03-18T18:54:04.557995Z
+2025-03-19 19:35:23,051 - src.etl.extract - ERROR - Error extracting collection Reference: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `updatedAt` cannot be resolved. Did you mean one of the following? [`loanId`, `name`, `pan`, `_id`, `linkedTo`].;
+'Filter ('updatedAt > 2025-03-18T18:54:04.557995Z)
++- Relation [_id#3144,linkedTo#3145,loanId#3146,name#3147,pan#3148,personId#3149,referenceId#3150,relationToBorrower#3151,yearsKnown#3152] MongoRelation(MongoRDD[115] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(referenceId,StringType,true),StructField(relationToBorrower,StringType,true),StructField(yearsKnown,IntegerType,true))))
+
+2025-03-19 19:35:23,052 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 19:35:23,053 - src.etl.load - INFO - No Person data to load
+2025-03-19 19:35:23,053 - src.etl.load - INFO - No Loan data to load
+2025-03-19 19:35:23,053 - src.etl.load - INFO - No Company data to load
+2025-03-19 19:35:23,053 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 19:35:23,053 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 19:35:23,054 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 19:35:23,054 - src.etl.load - INFO - No Reference data to load
+2025-03-19 19:35:23,054 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 19:35:23,054 - root - INFO - Sync job completed in 38.50 seconds
+2025-03-19 19:35:23,054 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 19:35:23,055 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 19:40:24,299 - root - INFO - Starting incremental sync job at 2025-03-19 19:40:24.299432
+2025-03-19 19:40:25,130 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 19:40:25,137 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 19:40:25,148 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 19:40:25,148 - root - INFO - Extracting data from MongoDB...
+2025-03-19 19:40:31,646 - src.etl.extract - INFO - Extracting Person data modified since 2025-03-19T13:02:21.772290Z
+2025-03-19 19:40:31,664 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `updatedAt` cannot be resolved. Did you mean one of the following? [`address`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('updatedAt > 2025-03-19T13:02:21.772290Z)
++- Relation [_id#3179,aadhar#3180,address#3181,companyId#3182,dateOfBirth#3183,email#3184,income#3185,name#3186,pan#3187,personId#3188,phone#3189,position#3190,roles#3191,yearsEmployed#3192] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 19:40:37,928 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 19:40:37,948 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `updatedAt` cannot be resolved. Did you mean one of the following? [`address`, `name`, `phone`, `_id`, `founded`].;
+'Filter ('updatedAt > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#3224,address#3225,companyId#3226,founded#3227,gst_number#3228,name#3229,phone#3230,sector#3231,website#3232] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 19:40:43,671 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=868>
+2025-03-19 19:40:43,674 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:43,674 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=868>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-03-19 19:40:43,678 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\errors\exceptions\captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o1791.sc
+2025-03-19 19:40:43,685 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:43,685 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\errors\exceptions\captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o1791.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-03-19 19:40:43,688 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:43,691 - src.spark.session - WARNING - Could not get last sync timestamp: An error occurred while calling o1851.collectToPython
+2025-03-19 19:40:43,692 - src.etl.extract - INFO - Extracting Loan data modified since 1970-01-01T00:00:00.000Z
+2025-03-19 19:40:43,726 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `updatedAt` cannot be resolved. Did you mean one of the following? [`loanId`, `status`, `term`, `_id`, `amount`].;
+'Filter ('updatedAt > 1970-01-01T00:00:00.000Z)
++- Relation [_id#3259,amount#3260,applicationDate#3261,coapplicantId#3262,decisionDate#3263,interestRate#3264,loanId#3265,loanType#3266,primaryApplicantId#3267,references#3268,status#3269,term#3270] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 19:40:44,326 - py4j.clientserver - INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-03-19 19:40:44,329 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:44,329 - root - INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 506, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+2025-03-19 19:40:46,360 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:46,361 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 506, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1053, in send_command
+    response = self.send_command(command, binary=binary)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-03-19 19:40:46,367 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:46,367 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 506, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1053, in send_command
+    response = self.send_command(command, binary=binary)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-03-19 19:40:46,373 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:46,374 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:46,374 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: An error occurred while calling o1860.load
+2025-03-19 19:40:52,508 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:52,509 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-03-19 19:40:52,509 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:52,509 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:52,510 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:56,593 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:56,594 - src.etl.extract - ERROR - Error extracting collection Reference: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-03-19 19:40:56,594 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:56,594 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:56,594 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 19:40:56,595 - src.etl.load - INFO - No Person data to load
+2025-03-19 19:40:56,595 - src.etl.load - INFO - No Loan data to load
+2025-03-19 19:40:56,595 - src.etl.load - INFO - No Company data to load
+2025-03-19 19:40:56,595 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 19:40:56,595 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 19:40:56,595 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 19:40:56,596 - src.etl.load - INFO - No Reference data to load
+2025-03-19 19:40:56,596 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 19:40:56,596 - root - INFO - Sync job completed in 32.30 seconds
+2025-03-19 19:40:56,596 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 19:40:56,596 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 19:40:58,641 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 19:40:58,641 - root - ERROR - Error during sync job: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File ".\src\main.py", line 75, in run_sync_job
+    spark.stop()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\session.py", line 1796, in stop
+    self._sc.stop()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 654, in stop
+    self._jsc.stop()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-03-19 19:40:58,644 - py4j.clientserver - INFO - Closing down clientserver connection

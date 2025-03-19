@@ -1,0 +1,183 @@
+2025-03-19 10:45:33,764 - root - INFO - Starting MongoDB to Neo4j sync service
+2025-03-19 10:45:33,764 - root - INFO - Sync interval: 5 minutes
+2025-03-19 10:45:33,764 - root - INFO - Starting full sync job at 2025-03-19 10:45:33.764592
+2025-03-19 10:45:40,134 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 10:45:40,257 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 10:45:40,287 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 10:45:40,288 - root - INFO - Extracting data from MongoDB...
+2025-03-19 10:45:46,184 - src.etl.extract - INFO - Extracted 50 records from Person
+2025-03-19 10:45:47,365 - src.etl.extract - INFO - Extracted 10 records from Company
+2025-03-19 10:45:48,413 - src.etl.extract - INFO - Extracted 93 records from Loan
+2025-03-19 10:45:49,361 - src.etl.extract - INFO - Extracted 57 records from PrimaryApplicant
+2025-03-19 10:45:50,315 - src.etl.extract - INFO - Extracted 93 records from Coapplicant
+2025-03-19 10:45:51,287 - src.etl.extract - INFO - Extracted 183 records from Reference
+2025-03-19 10:45:51,295 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 10:45:55,585 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(0) already exists with label `Person` and property `personId` = 'PERSON001'
+2025-03-19 10:45:56,730 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(1) already exists with label `Person` and property `personId` = 'PERSON002'
+2025-03-19 10:45:57,782 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(2) already exists with label `Person` and property `personId` = 'PERSON003'
+2025-03-19 10:45:58,804 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(3) already exists with label `Person` and property `personId` = 'PERSON004'
+2025-03-19 10:45:59,905 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(4) already exists with label `Person` and property `personId` = 'PERSON005'
+2025-03-19 10:46:01,030 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(5) already exists with label `Person` and property `personId` = 'PERSON006'
+2025-03-19 10:46:02,048 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(6) already exists with label `Person` and property `personId` = 'PERSON007'
+2025-03-19 10:46:03,016 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(7) already exists with label `Person` and property `personId` = 'PERSON008'
+2025-03-19 10:46:04,065 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(8) already exists with label `Person` and property `personId` = 'PERSON009'
+2025-03-19 10:46:05,063 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(9) already exists with label `Person` and property `personId` = 'PERSON010'
+2025-03-19 10:46:06,047 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(10) already exists with label `Person` and property `personId` = 'PERSON011'
+2025-03-19 10:46:07,052 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(11) already exists with label `Person` and property `personId` = 'PERSON012'
+2025-03-19 10:46:08,020 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(12) already exists with label `Person` and property `personId` = 'PERSON013'
+2025-03-19 10:46:08,967 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(13) already exists with label `Person` and property `personId` = 'PERSON014'
+2025-03-19 10:46:09,929 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(14) already exists with label `Person` and property `personId` = 'PERSON015'
+2025-03-19 10:46:10,893 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(15) already exists with label `Person` and property `personId` = 'PERSON016'
+2025-03-19 10:46:11,856 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(16) already exists with label `Person` and property `personId` = 'PERSON017'
+2025-03-19 10:46:12,749 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(17) already exists with label `Person` and property `personId` = 'PERSON018'
+2025-03-19 10:46:13,664 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(18) already exists with label `Person` and property `personId` = 'PERSON019'
+2025-03-19 10:46:14,519 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(19) already exists with label `Person` and property `personId` = 'PERSON020'
+2025-03-19 10:46:15,409 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(20) already exists with label `Person` and property `personId` = 'PERSON021'
+2025-03-19 10:46:16,296 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(21) already exists with label `Person` and property `personId` = 'PERSON022'
+2025-03-19 10:46:17,121 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(22) already exists with label `Person` and property `personId` = 'PERSON023'
+2025-03-19 10:46:18,037 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(23) already exists with label `Person` and property `personId` = 'PERSON024'
+2025-03-19 10:46:18,960 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(24) already exists with label `Person` and property `personId` = 'PERSON025'
+2025-03-19 10:46:19,807 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(25) already exists with label `Person` and property `personId` = 'PERSON026'
+2025-03-19 10:46:20,721 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(26) already exists with label `Person` and property `personId` = 'PERSON027'
+2025-03-19 10:46:21,597 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(27) already exists with label `Person` and property `personId` = 'PERSON028'
+2025-03-19 10:46:22,491 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(28) already exists with label `Person` and property `personId` = 'PERSON029'
+2025-03-19 10:46:23,405 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(29) already exists with label `Person` and property `personId` = 'PERSON030'
+2025-03-19 10:46:24,280 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(30) already exists with label `Person` and property `personId` = 'PERSON031'
+2025-03-19 10:46:25,123 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(31) already exists with label `Person` and property `personId` = 'PERSON032'
+2025-03-19 10:46:25,975 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(32) already exists with label `Person` and property `personId` = 'PERSON033'
+2025-03-19 10:46:26,900 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(33) already exists with label `Person` and property `personId` = 'PERSON034'
+2025-03-19 10:46:27,815 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(34) already exists with label `Person` and property `personId` = 'PERSON035'
+2025-03-19 10:46:28,683 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(35) already exists with label `Person` and property `personId` = 'PERSON036'
+2025-03-19 10:46:29,600 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(36) already exists with label `Person` and property `personId` = 'PERSON037'
+2025-03-19 10:46:30,470 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(37) already exists with label `Person` and property `personId` = 'PERSON038'
+2025-03-19 10:46:31,338 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(38) already exists with label `Person` and property `personId` = 'PERSON039'
+2025-03-19 10:46:32,199 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(39) already exists with label `Person` and property `personId` = 'PERSON040'
+2025-03-19 10:46:33,009 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(40) already exists with label `Person` and property `personId` = 'PERSON041'
+2025-03-19 10:46:33,865 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(41) already exists with label `Person` and property `personId` = 'PERSON042'
+2025-03-19 10:46:34,735 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(42) already exists with label `Person` and property `personId` = 'PERSON043'
+2025-03-19 10:46:35,591 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(43) already exists with label `Person` and property `personId` = 'PERSON044'
+2025-03-19 10:46:36,490 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(44) already exists with label `Person` and property `personId` = 'PERSON045'
+2025-03-19 10:46:37,292 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(45) already exists with label `Person` and property `personId` = 'PERSON046'
+2025-03-19 10:46:38,136 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(46) already exists with label `Person` and property `personId` = 'PERSON047'
+2025-03-19 10:46:38,993 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(47) already exists with label `Person` and property `personId` = 'PERSON048'
+2025-03-19 10:46:39,869 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(48) already exists with label `Person` and property `personId` = 'PERSON049'
+2025-03-19 10:46:40,698 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(49) already exists with label `Person` and property `personId` = 'PERSON050'
+2025-03-19 10:46:40,699 - src.etl.load - INFO - Loaded 0 Person nodes
+2025-03-19 10:46:42,347 - src.etl.load - INFO - Loaded 93 Loan nodes
+2025-03-19 10:46:49,071 - src.spark.session - INFO - Updated sync timestamp for Loan to 2025-03-19T05:16:42.348316Z
+2025-03-19 10:46:49,931 - src.etl.load - INFO - Loaded 10 Company nodes
+2025-03-19 10:46:56,361 - src.spark.session - INFO - Updated sync timestamp for Company to 2025-03-19T05:16:49.932911Z
+2025-03-19 10:46:56,361 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 10:46:59,556 - src.etl.load - INFO - Created 93 PrimaryApplicant-Loan relationships
+2025-03-19 10:47:05,888 - src.spark.session - INFO - Updated sync timestamp for PrimaryApplicant to 2025-03-19T05:16:59.556314Z
+2025-03-19 10:47:09,409 - src.etl.load - INFO - Created 93 Loan-CoApplicant relationships
+2025-03-19 10:47:15,095 - src.spark.session - INFO - Updated sync timestamp for Coapplicant to 2025-03-19T05:17:09.410021Z
+2025-03-19 10:47:18,541 - src.etl.load - INFO - Created 183 Loan-Reference relationships
+2025-03-19 10:47:24,268 - src.spark.session - INFO - Updated sync timestamp for Reference to 2025-03-19T05:17:18.541741Z
+2025-03-19 10:47:26,231 - src.etl.load - INFO - Created 50 Person-Company relationships
+2025-03-19 10:47:26,232 - root - INFO - Sync job completed in 112.47 seconds
+2025-03-19 10:47:26,232 - root - INFO - Nodes loaded: 0 Persons, 93 Loans, 10 Companies
+2025-03-19 10:47:26,232 - root - INFO - Relationships loaded: 93 Primary, 93 CoApplicant, 183 Reference, 50 Company
+2025-03-19 10:52:27,766 - root - INFO - Starting incremental sync job at 2025-03-19 10:52:27.766953
+2025-03-19 10:52:28,553 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 10:52:28,557 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 10:52:28,570 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 10:52:28,570 - root - INFO - Extracting data from MongoDB...
+2025-03-19 10:52:34,040 - src.etl.extract - INFO - Extracting Person data modified since 1970-01-01T00:00:00.000Z
+2025-03-19 10:52:34,172 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`aadhar`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('lastUpdated > 1970-01-01T00:00:00.000Z)
++- Relation [_id#2944,aadhar#2945,address#2946,companyId#2947,dateOfBirth#2948,email#2949,income#2950,name#2951,pan#2952,personId#2953,phone#2954,position#2955,roles#2956,yearsEmployed#2957] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 10:52:39,308 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 10:52:39,322 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`founded`, `gst_number`, `name`, `phone`, `website`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#2989,address#2990,companyId#2991,founded#2992,gst_number#2993,name#2994,phone#2995,sector#2996,website#2997] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 10:52:44,369 - src.etl.extract - INFO - Extracting Loan data modified since 2025-03-18T18:53:25.663309Z
+2025-03-19 10:52:44,381 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`status`, `amount`, `loanType`, `_id`, `decisionDate`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:25.663309Z)
++- Relation [_id#3024,amount#3025,applicationDate#3026,coapplicantId#3027,decisionDate#3028,interestRate#3029,loanId#3030,loanType#3031,primaryApplicantId#3032,references#3033,status#3034,term#3035] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 10:52:49,212 - src.etl.extract - INFO - Extracting PrimaryApplicant data modified since 2025-03-18T18:53:45.323152Z
+2025-03-19 10:52:49,230 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `loans`, `personId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:45.323152Z)
++- Relation [_id#3065,isCoApplicantFor#3066,isReferenceFor#3067,loans#3068,name#3069,pan#3070,personId#3071,primaryApplicantId#3072] MongoRelation(MongoRDD[69] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(isCoApplicantFor,ArrayType(StringType,true),true),StructField(isReferenceFor,ArrayType(StringType,true),true),StructField(loans,ArrayType(StringType,true),true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(primaryApplicantId,StringType,true))))
+
+2025-03-19 10:52:54,010 - src.etl.extract - INFO - Extracting Coapplicant data modified since 2025-03-18T18:53:54.899035Z
+2025-03-19 10:52:54,027 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:54.899035Z)
++- Relation [_id#3098,coApplicantId#3099,linkedTo#3100,loanId#3101,name#3102,pan#3103,personId#3104,relationToPrimary#3105] MongoRelation(MongoRDD[92] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(coApplicantId,StringType,true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(relationToPrimary,StringType,true))))
+
+2025-03-19 10:52:58,708 - src.etl.extract - INFO - Extracting Reference data modified since 2025-03-18T18:54:04.557995Z
+2025-03-19 10:52:58,727 - src.etl.extract - ERROR - Error extracting collection Reference: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:54:04.557995Z)
++- Relation [_id#3131,linkedTo#3132,loanId#3133,name#3134,pan#3135,personId#3136,referenceId#3137,relationToBorrower#3138,yearsKnown#3139] MongoRelation(MongoRDD[115] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(referenceId,StringType,true),StructField(relationToBorrower,StringType,true),StructField(yearsKnown,IntegerType,true))))
+
+2025-03-19 10:52:58,728 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 10:52:58,729 - src.etl.load - INFO - No Person data to load
+2025-03-19 10:52:58,729 - src.etl.load - INFO - No Loan data to load
+2025-03-19 10:52:58,729 - src.etl.load - INFO - No Company data to load
+2025-03-19 10:52:58,730 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 10:52:58,730 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 10:52:58,730 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 10:52:58,730 - src.etl.load - INFO - No Reference data to load
+2025-03-19 10:52:58,731 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 10:52:58,731 - root - INFO - Sync job completed in 30.96 seconds
+2025-03-19 10:52:58,731 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 10:52:58,731 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 10:57:59,698 - root - INFO - Starting incremental sync job at 2025-03-19 10:57:59.698397
+2025-03-19 10:58:00,563 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 10:58:00,572 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 10:58:00,599 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 10:58:00,600 - root - INFO - Extracting data from MongoDB...
+2025-03-19 10:58:06,450 - src.etl.extract - INFO - Extracting Person data modified since 1970-01-01T00:00:00.000Z
+2025-03-19 10:58:06,469 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`aadhar`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('lastUpdated > 1970-01-01T00:00:00.000Z)
++- Relation [_id#3166,aadhar#3167,address#3168,companyId#3169,dateOfBirth#3170,email#3171,income#3172,name#3173,pan#3174,personId#3175,phone#3176,position#3177,roles#3178,yearsEmployed#3179] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 10:58:11,657 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 10:58:11,696 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`founded`, `gst_number`, `name`, `phone`, `website`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#3211,address#3212,companyId#3213,founded#3214,gst_number#3215,name#3216,phone#3217,sector#3218,website#3219] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 10:58:16,732 - src.etl.extract - INFO - Extracting Loan data modified since 2025-03-18T18:53:25.663309Z
+2025-03-19 10:58:16,762 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`status`, `amount`, `loanType`, `_id`, `decisionDate`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:25.663309Z)
++- Relation [_id#3246,amount#3247,applicationDate#3248,coapplicantId#3249,decisionDate#3250,interestRate#3251,loanId#3252,loanType#3253,primaryApplicantId#3254,references#3255,status#3256,term#3257] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 10:58:26,165 - src.etl.extract - INFO - Extracting PrimaryApplicant data modified since 2025-03-18T18:53:45.323152Z
+2025-03-19 10:58:26,190 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `loans`, `personId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:45.323152Z)
++- Relation [_id#3287,isCoApplicantFor#3288,isReferenceFor#3289,loans#3290,name#3291,pan#3292,personId#3293,primaryApplicantId#3294] MongoRelation(MongoRDD[69] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(isCoApplicantFor,ArrayType(StringType,true),true),StructField(isReferenceFor,ArrayType(StringType,true),true),StructField(loans,ArrayType(StringType,true),true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(primaryApplicantId,StringType,true))))
+
+2025-03-19 10:58:31,722 - src.etl.extract - INFO - Extracting Coapplicant data modified since 2025-03-18T18:53:54.899035Z
+2025-03-19 10:58:31,761 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:54.899035Z)
++- Relation [_id#3320,coApplicantId#3321,linkedTo#3322,loanId#3323,name#3324,pan#3325,personId#3326,relationToPrimary#3327] MongoRelation(MongoRDD[92] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(coApplicantId,StringType,true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(relationToPrimary,StringType,true))))
+
+2025-03-19 10:58:36,734 - src.etl.extract - INFO - Extracting Reference data modified since 2025-03-18T18:54:04.557995Z
+2025-03-19 10:58:36,752 - src.etl.extract - ERROR - Error extracting collection Reference: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:54:04.557995Z)
++- Relation [_id#3353,linkedTo#3354,loanId#3355,name#3356,pan#3357,personId#3358,referenceId#3359,relationToBorrower#3360,yearsKnown#3361] MongoRelation(MongoRDD[115] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(referenceId,StringType,true),StructField(relationToBorrower,StringType,true),StructField(yearsKnown,IntegerType,true))))
+
+2025-03-19 10:58:36,753 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 10:58:36,754 - src.etl.load - INFO - No Person data to load
+2025-03-19 10:58:36,754 - src.etl.load - INFO - No Loan data to load
+2025-03-19 10:58:36,754 - src.etl.load - INFO - No Company data to load
+2025-03-19 10:58:36,755 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 10:58:36,755 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 10:58:36,755 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 10:58:36,756 - src.etl.load - INFO - No Reference data to load
+2025-03-19 10:58:36,756 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 10:58:36,756 - root - INFO - Sync job completed in 37.06 seconds
+2025-03-19 10:58:36,757 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 10:58:36,757 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 11:00:16,529 - root - ERROR - Service stopped due to error: 'NoneType' object has no attribute 'sc'
+Traceback (most recent call last):
+  File ".\src\main.py", line 97, in main
+    time.sleep(1)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+AttributeError: 'NoneType' object has no attribute 'sc'

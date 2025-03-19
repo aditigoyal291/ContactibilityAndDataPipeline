@@ -1,0 +1,41 @@
+2025-03-19 00:13:01,380 - root - INFO - Starting MongoDB to Neo4j sync service
+2025-03-19 00:13:01,380 - root - INFO - Sync interval: 30 minutes
+2025-03-19 00:13:01,380 - root - INFO - Starting full sync job at 2025-03-19 00:13:01.380657
+2025-03-19 00:13:30,728 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 00:13:31,202 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 00:13:33,198 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 00:13:33,198 - root - INFO - Extracting data from MongoDB...
+2025-03-19 00:13:41,031 - src.etl.extract - INFO - Extracted 50 records from Person
+2025-03-19 00:13:42,187 - src.etl.extract - INFO - Extracted 10 records from Company
+2025-03-19 00:13:43,245 - src.etl.extract - INFO - Extracted 93 records from Loan
+2025-03-19 00:13:44,255 - src.etl.extract - INFO - Extracted 57 records from PrimaryApplicant
+2025-03-19 00:13:45,058 - src.etl.extract - INFO - Extracted 93 records from Coapplicant
+2025-03-19 00:13:45,984 - src.etl.extract - INFO - Extracted 183 records from Reference
+2025-03-19 00:13:45,985 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 00:13:49,374 - root - ERROR - Error during sync job: [TABLE_OR_VIEW_NOT_FOUND] The table or view `primary_applicant` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 2 pos 38;
+'Aggregate [count(1) AS count#243L]
++- 'Filter ('personId = PERSON001)
+   +- 'UnresolvedRelation [primary_applicant], [], false
+Traceback (most recent call last):
+  File ".\src\main.py", line 56, in run_sync_job
+    person_count = load_persons(spark, person_df, neo4j_client)
+  File "C:\Users\ADITI\Desktop\pyspark-pipeline\src\etl\load.py", line 28, in load_persons
+    roles = get_entity_roles(spark, person_id)
+  File "C:\Users\ADITI\Desktop\pyspark-pipeline\src\etl\transform.py", line 38, in get_entity_roles
+    is_primary_row = spark.sql(f"""
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\session.py", line 1631, in sql
+    return DataFrame(self._jsparkSession.sql(sqlQuery, litArgs), self)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\errors\exceptions\captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `primary_applicant` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 2 pos 38;
+'Aggregate [count(1) AS count#243L]
++- 'Filter ('personId = PERSON001)
+   +- 'UnresolvedRelation [primary_applicant], [], false
+
+2025-03-19 00:20:41,745 - root - INFO - Service stopped by user

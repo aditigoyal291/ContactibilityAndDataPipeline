@@ -1,0 +1,5 @@
+pyspark==3.3.0
+findspark==1.4.0
+py2neo==2021.2.3
+pymongo==4.3.3
+pytest==7.3.1

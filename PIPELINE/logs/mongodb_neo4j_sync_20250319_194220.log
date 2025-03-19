@@ -1,0 +1,69 @@
+2025-03-19 19:42:20,963 - root - INFO - Starting MongoDB to Neo4j sync service
+2025-03-19 19:42:20,963 - root - INFO - Sync interval: 5 minutes
+2025-03-19 19:42:20,963 - root - INFO - Starting full sync job at 2025-03-19 19:42:20.963476
+2025-03-19 19:42:29,407 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 19:42:29,559 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 19:42:29,575 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 19:42:29,575 - root - INFO - Extracting data from MongoDB...
+2025-03-19 19:42:36,917 - src.etl.extract - INFO - Extracted 50 records from Person
+2025-03-19 19:42:38,061 - src.etl.extract - INFO - Extracted 10 records from Company
+2025-03-19 19:42:39,270 - src.etl.extract - INFO - Extracted 93 records from Loan
+2025-03-19 19:42:40,320 - src.etl.extract - INFO - Extracted 57 records from PrimaryApplicant
+2025-03-19 19:42:41,383 - src.etl.extract - INFO - Extracted 93 records from Coapplicant
+2025-03-19 19:42:42,631 - src.etl.extract - INFO - Extracted 183 records from Reference
+2025-03-19 19:42:42,632 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 19:43:39,536 - src.etl.load - INFO - Loaded 50 Person nodes
+2025-03-19 19:43:46,948 - src.spark.session - INFO - Updated sync timestamp for Person to 2025-03-19T14:13:39.536960Z
+2025-03-19 19:43:49,914 - src.etl.load - INFO - Loaded 93 Loan nodes
+2025-03-19 19:43:56,417 - src.spark.session - INFO - Updated sync timestamp for Loan to 2025-03-19T14:13:49.914837Z
+2025-03-19 19:43:59,647 - src.etl.load - INFO - Loaded 10 Company nodes
+2025-03-19 19:44:06,283 - src.spark.session - INFO - Updated sync timestamp for Company to 2025-03-19T14:13:59.647847Z
+2025-03-19 19:44:06,283 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 19:44:09,639 - src.etl.load - INFO - Created 93 PrimaryApplicant-Loan relationships
+2025-03-19 19:44:16,017 - src.spark.session - INFO - Updated sync timestamp for PrimaryApplicant to 2025-03-19T14:14:09.639845Z
+2025-03-19 19:44:19,148 - src.etl.load - INFO - Created 93 Loan-CoApplicant relationships
+2025-03-19 19:44:25,673 - src.spark.session - INFO - Updated sync timestamp for Coapplicant to 2025-03-19T14:14:19.148367Z
+2025-03-19 19:44:29,122 - src.etl.load - INFO - Created 183 Loan-Reference relationships
+2025-03-19 19:44:35,609 - src.spark.session - INFO - Updated sync timestamp for Reference to 2025-03-19T14:14:29.123157Z
+2025-03-19 19:44:37,629 - src.etl.load - INFO - Created 50 Person-Company relationships
+2025-03-19 19:44:37,629 - root - INFO - Sync job completed in 136.67 seconds
+2025-03-19 19:44:37,629 - root - INFO - Nodes loaded: 50 Persons, 93 Loans, 10 Companies
+2025-03-19 19:44:37,630 - root - INFO - Relationships loaded: 93 Primary, 93 CoApplicant, 183 Reference, 50 Company
+2025-03-19 19:49:38,880 - root - INFO - Starting incremental sync job at 2025-03-19 19:49:38.880959
+2025-03-19 19:49:39,788 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 19:49:39,792 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 19:49:39,799 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 19:49:39,799 - root - INFO - Extracting data from MongoDB...
+2025-03-19 19:49:42,968 - src.etl.extract - INFO - Extracted 50 records from Person
+2025-03-19 19:49:45,846 - src.etl.extract - INFO - Extracted 10 records from Company
+2025-03-19 19:49:48,651 - src.etl.extract - INFO - Extracted 93 records from Loan
+2025-03-19 19:49:51,276 - src.etl.extract - INFO - Extracted 57 records from PrimaryApplicant
+2025-03-19 19:49:53,919 - src.etl.extract - INFO - Extracted 93 records from Coapplicant
+2025-03-19 19:49:56,796 - src.etl.extract - INFO - Extracted 183 records from Reference
+2025-03-19 19:49:56,796 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 19:55:02,976 - src.etl.load - INFO - Loaded 50 Person nodes
+2025-03-19 19:55:09,137 - src.spark.session - INFO - Updated sync timestamp for Person to 2025-03-19T14:25:02.976046Z
+2025-03-19 19:55:12,707 - src.etl.load - INFO - Loaded 93 Loan nodes
+2025-03-19 19:55:19,134 - src.spark.session - INFO - Updated sync timestamp for Loan to 2025-03-19T14:25:12.707506Z
+2025-03-19 19:55:22,159 - src.etl.load - INFO - Loaded 10 Company nodes
+2025-03-19 19:55:28,421 - src.spark.session - INFO - Updated sync timestamp for Company to 2025-03-19T14:25:22.159185Z
+2025-03-19 19:55:28,422 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 19:55:31,356 - src.etl.load - INFO - Created 93 PrimaryApplicant-Loan relationships
+2025-03-19 19:55:37,779 - src.spark.session - INFO - Updated sync timestamp for PrimaryApplicant to 2025-03-19T14:25:31.356840Z
+2025-03-19 19:55:40,870 - src.etl.load - INFO - Created 93 Loan-CoApplicant relationships
+2025-03-19 19:55:47,172 - src.spark.session - INFO - Updated sync timestamp for Coapplicant to 2025-03-19T14:25:40.870987Z
+2025-03-19 19:55:50,634 - src.etl.load - INFO - Created 183 Loan-Reference relationships
+2025-03-19 19:55:57,020 - src.spark.session - INFO - Updated sync timestamp for Reference to 2025-03-19T14:25:50.634458Z
+2025-03-19 19:55:59,338 - src.etl.load - INFO - Created 50 Person-Company relationships
+2025-03-19 19:55:59,339 - root - INFO - Sync job completed in 380.46 seconds
+2025-03-19 19:55:59,339 - root - INFO - Nodes loaded: 50 Persons, 93 Loans, 10 Companies
+2025-03-19 19:55:59,339 - root - INFO - Relationships loaded: 93 Primary, 93 CoApplicant, 183 Reference, 50 Company
+2025-03-19 20:00:11,954 - root - ERROR - Service stopped due to error: 'NoneType' object has no attribute 'sc'
+Traceback (most recent call last):
+  File ".\src\main.py", line 97, in main
+    time.sleep(1)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+AttributeError: 'NoneType' object has no attribute 'sc'

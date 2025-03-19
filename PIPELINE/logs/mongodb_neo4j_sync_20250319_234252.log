@@ -1,0 +1,80 @@
+2025-03-19 23:42:52,725 - root - INFO - Starting MongoDB to Neo4j sync service
+2025-03-19 23:42:52,726 - root - INFO - Sync interval: 5 minutes
+2025-03-19 23:42:52,726 - root - INFO - Starting full sync job at 2025-03-19 23:42:52.726501
+2025-03-19 23:42:59,526 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 23:42:59,656 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 23:42:59,677 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 23:42:59,678 - root - INFO - Extracting data from MongoDB...
+2025-03-19 23:43:05,844 - src.etl.extract - INFO - Extracted 50 records from Person
+2025-03-19 23:43:06,776 - src.etl.extract - INFO - Extracted 10 records from Company
+2025-03-19 23:43:07,702 - src.etl.extract - INFO - Extracted 93 records from Loan
+2025-03-19 23:43:08,768 - src.etl.extract - INFO - Extracted 57 records from PrimaryApplicant
+2025-03-19 23:43:09,549 - src.etl.extract - INFO - Extracted 93 records from Coapplicant
+2025-03-19 23:43:10,383 - src.etl.extract - INFO - Extracted 183 records from Reference
+2025-03-19 23:43:10,383 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 23:43:14,058 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(0) already exists with label `Person` and property `personId` = 'PERSON001'
+2025-03-19 23:43:15,324 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(1) already exists with label `Person` and property `personId` = 'PERSON002'
+2025-03-19 23:43:16,419 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(2) already exists with label `Person` and property `personId` = 'PERSON003'
+2025-03-19 23:43:17,544 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(3) already exists with label `Person` and property `personId` = 'PERSON004'
+2025-03-19 23:43:18,615 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(4) already exists with label `Person` and property `personId` = 'PERSON005'
+2025-03-19 23:43:19,972 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(5) already exists with label `Person` and property `personId` = 'PERSON006'
+2025-03-19 23:43:21,316 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(6) already exists with label `Person` and property `personId` = 'PERSON007'
+2025-03-19 23:43:22,750 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(7) already exists with label `Person` and property `personId` = 'PERSON008'
+2025-03-19 23:43:24,137 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(8) already exists with label `Person` and property `personId` = 'PERSON009'
+2025-03-19 23:43:25,111 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(9) already exists with label `Person` and property `personId` = 'PERSON010'
+2025-03-19 23:43:26,001 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(10) already exists with label `Person` and property `personId` = 'PERSON011'
+2025-03-19 23:43:26,867 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(11) already exists with label `Person` and property `personId` = 'PERSON012'
+2025-03-19 23:43:27,801 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(12) already exists with label `Person` and property `personId` = 'PERSON013'
+2025-03-19 23:43:28,696 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(13) already exists with label `Person` and property `personId` = 'PERSON014'
+2025-03-19 23:43:29,666 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(14) already exists with label `Person` and property `personId` = 'PERSON015'
+2025-03-19 23:43:30,494 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(15) already exists with label `Person` and property `personId` = 'PERSON016'
+2025-03-19 23:43:31,478 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(16) already exists with label `Person` and property `personId` = 'PERSON017'
+2025-03-19 23:43:32,394 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(17) already exists with label `Person` and property `personId` = 'PERSON018'
+2025-03-19 23:43:33,305 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(18) already exists with label `Person` and property `personId` = 'PERSON019'
+2025-03-19 23:43:34,518 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(19) already exists with label `Person` and property `personId` = 'PERSON020'
+2025-03-19 23:43:35,326 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(20) already exists with label `Person` and property `personId` = 'PERSON021'
+2025-03-19 23:43:36,188 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(21) already exists with label `Person` and property `personId` = 'PERSON022'
+2025-03-19 23:43:37,309 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(22) already exists with label `Person` and property `personId` = 'PERSON023'
+2025-03-19 23:43:38,316 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(23) already exists with label `Person` and property `personId` = 'PERSON024'
+2025-03-19 23:43:39,170 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(24) already exists with label `Person` and property `personId` = 'PERSON025'
+2025-03-19 23:43:40,104 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(25) already exists with label `Person` and property `personId` = 'PERSON026'
+2025-03-19 23:43:40,964 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(26) already exists with label `Person` and property `personId` = 'PERSON027'
+2025-03-19 23:43:41,924 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(27) already exists with label `Person` and property `personId` = 'PERSON028'
+2025-03-19 23:43:42,813 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(28) already exists with label `Person` and property `personId` = 'PERSON029'
+2025-03-19 23:43:43,667 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(29) already exists with label `Person` and property `personId` = 'PERSON030'
+2025-03-19 23:43:44,679 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(30) already exists with label `Person` and property `personId` = 'PERSON031'
+2025-03-19 23:43:45,686 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(31) already exists with label `Person` and property `personId` = 'PERSON032'
+2025-03-19 23:43:46,602 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(32) already exists with label `Person` and property `personId` = 'PERSON033'
+2025-03-19 23:43:47,421 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(33) already exists with label `Person` and property `personId` = 'PERSON034'
+2025-03-19 23:43:48,293 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(34) already exists with label `Person` and property `personId` = 'PERSON035'
+2025-03-19 23:43:49,130 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(35) already exists with label `Person` and property `personId` = 'PERSON036'
+2025-03-19 23:43:50,334 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(36) already exists with label `Person` and property `personId` = 'PERSON037'
+2025-03-19 23:43:51,247 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(37) already exists with label `Person` and property `personId` = 'PERSON038'
+2025-03-19 23:43:52,230 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(38) already exists with label `Person` and property `personId` = 'PERSON039'
+2025-03-19 23:43:53,348 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(39) already exists with label `Person` and property `personId` = 'PERSON040'
+2025-03-19 23:43:54,511 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(40) already exists with label `Person` and property `personId` = 'PERSON041'
+2025-03-19 23:43:55,496 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(41) already exists with label `Person` and property `personId` = 'PERSON042'
+2025-03-19 23:43:56,532 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(42) already exists with label `Person` and property `personId` = 'PERSON043'
+2025-03-19 23:43:57,397 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(43) already exists with label `Person` and property `personId` = 'PERSON044'
+2025-03-19 23:43:58,176 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(44) already exists with label `Person` and property `personId` = 'PERSON045'
+2025-03-19 23:43:58,974 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(45) already exists with label `Person` and property `personId` = 'PERSON046'
+2025-03-19 23:43:59,714 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(46) already exists with label `Person` and property `personId` = 'PERSON047'
+2025-03-19 23:44:00,592 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(47) already exists with label `Person` and property `personId` = 'PERSON048'
+2025-03-19 23:44:01,362 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(48) already exists with label `Person` and property `personId` = 'PERSON049'
+2025-03-19 23:44:02,217 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(49) already exists with label `Person` and property `personId` = 'PERSON050'
+2025-03-19 23:44:02,219 - src.etl.load - INFO - Loaded 0 Person nodes
+2025-03-19 23:44:03,839 - src.etl.load - INFO - Loaded 93 Loan nodes
+2025-03-19 23:44:11,624 - src.spark.session - INFO - Updated sync timestamp for Loan to 2025-03-19T18:14:03.840067Z
+2025-03-19 23:44:13,047 - src.etl.load - INFO - Loaded 10 Company nodes
+2025-03-19 23:44:19,484 - src.spark.session - INFO - Updated sync timestamp for Company to 2025-03-19T18:14:13.048234Z
+2025-03-19 23:44:19,485 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 23:44:22,372 - src.etl.load - INFO - Created 93 PrimaryApplicant-Loan relationships
+2025-03-19 23:44:28,777 - src.spark.session - INFO - Updated sync timestamp for PrimaryApplicant to 2025-03-19T18:14:22.373063Z
+2025-03-19 23:44:31,694 - src.etl.load - INFO - Created 93 Loan-CoApplicant relationships
+2025-03-19 23:44:37,986 - src.spark.session - INFO - Updated sync timestamp for Coapplicant to 2025-03-19T18:14:31.695682Z
+2025-03-19 23:44:40,834 - src.etl.load - INFO - Created 183 Loan-Reference relationships
+2025-03-19 23:44:47,277 - src.spark.session - INFO - Updated sync timestamp for Reference to 2025-03-19T18:14:40.835571Z
+2025-03-19 23:44:49,699 - src.etl.load - INFO - Created 50 Person-Company relationships
+2025-03-19 23:44:49,699 - root - INFO - Sync job completed in 116.97 seconds
+2025-03-19 23:44:49,700 - root - INFO - Nodes loaded: 0 Persons, 93 Loans, 10 Companies
+2025-03-19 23:44:49,701 - root - INFO - Relationships loaded: 93 Primary, 93 CoApplicant, 183 Reference, 50 Company

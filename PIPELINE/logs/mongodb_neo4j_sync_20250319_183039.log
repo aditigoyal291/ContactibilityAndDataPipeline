@@ -1,0 +1,463 @@
+2025-03-19 18:30:39,854 - root - INFO - Starting MongoDB to Neo4j sync service
+2025-03-19 18:30:39,855 - root - INFO - Sync interval: 5 minutes
+2025-03-19 18:30:39,855 - root - INFO - Starting full sync job at 2025-03-19 18:30:39.855504
+2025-03-19 18:31:09,149 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 18:31:09,297 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 18:31:09,684 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 18:31:09,685 - root - INFO - Extracting data from MongoDB...
+2025-03-19 18:31:17,310 - src.etl.extract - INFO - Extracted 50 records from Person
+2025-03-19 18:31:18,383 - src.etl.extract - INFO - Extracted 10 records from Company
+2025-03-19 18:31:19,461 - src.etl.extract - INFO - Extracted 93 records from Loan
+2025-03-19 18:31:20,478 - src.etl.extract - INFO - Extracted 57 records from PrimaryApplicant
+2025-03-19 18:31:21,577 - src.etl.extract - INFO - Extracted 93 records from Coapplicant
+2025-03-19 18:31:22,700 - src.etl.extract - INFO - Extracted 183 records from Reference
+2025-03-19 18:31:22,707 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 18:32:21,771 - src.etl.load - INFO - Loaded 50 Person nodes
+2025-03-19 18:32:30,131 - src.spark.session - INFO - Updated sync timestamp for Person to 2025-03-19T13:02:21.772290Z
+2025-03-19 18:32:32,428 - src.etl.load - INFO - Loaded 93 Loan nodes
+2025-03-19 18:32:40,811 - src.spark.session - INFO - Updated sync timestamp for Loan to 2025-03-19T13:02:32.429622Z
+2025-03-19 18:32:43,697 - src.etl.load - INFO - Loaded 10 Company nodes
+2025-03-19 18:32:51,030 - src.spark.session - INFO - Updated sync timestamp for Company to 2025-03-19T13:02:43.698371Z
+2025-03-19 18:32:51,031 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 18:32:55,142 - src.etl.load - INFO - Created 93 PrimaryApplicant-Loan relationships
+2025-03-19 18:33:03,162 - src.spark.session - INFO - Updated sync timestamp for PrimaryApplicant to 2025-03-19T13:02:55.142454Z
+2025-03-19 18:33:06,679 - src.etl.load - INFO - Created 93 Loan-CoApplicant relationships
+2025-03-19 18:33:14,063 - src.spark.session - INFO - Updated sync timestamp for Coapplicant to 2025-03-19T13:03:06.680811Z
+2025-03-19 18:33:18,027 - src.etl.load - INFO - Created 183 Loan-Reference relationships
+2025-03-19 18:33:25,993 - src.spark.session - INFO - Updated sync timestamp for Reference to 2025-03-19T13:03:18.028206Z
+2025-03-19 18:33:28,367 - src.etl.load - INFO - Created 50 Person-Company relationships
+2025-03-19 18:33:28,368 - root - INFO - Sync job completed in 168.51 seconds
+2025-03-19 18:33:28,368 - root - INFO - Nodes loaded: 50 Persons, 93 Loans, 10 Companies
+2025-03-19 18:33:28,369 - root - INFO - Relationships loaded: 93 Primary, 93 CoApplicant, 183 Reference, 50 Company
+2025-03-19 18:38:29,482 - root - INFO - Starting incremental sync job at 2025-03-19 18:38:29.482993
+2025-03-19 18:38:30,534 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 18:38:30,539 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 18:38:30,566 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 18:38:30,566 - root - INFO - Extracting data from MongoDB...
+2025-03-19 18:38:36,611 - src.etl.extract - INFO - Extracting Person data modified since 2025-03-19T13:02:21.772290Z
+2025-03-19 18:38:36,811 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`aadhar`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('lastUpdated > 2025-03-19T13:02:21.772290Z)
++- Relation [_id#2957,aadhar#2958,address#2959,companyId#2960,dateOfBirth#2961,email#2962,income#2963,name#2964,pan#2965,personId#2966,phone#2967,position#2968,roles#2969,yearsEmployed#2970] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 18:38:42,405 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 18:38:42,430 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`founded`, `gst_number`, `name`, `phone`, `website`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#3002,address#3003,companyId#3004,founded#3005,gst_number#3006,name#3007,phone#3008,sector#3009,website#3010] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 18:38:48,006 - src.etl.extract - INFO - Extracting Loan data modified since 2025-03-18T18:53:25.663309Z
+2025-03-19 18:38:48,035 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`status`, `amount`, `loanType`, `_id`, `decisionDate`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:25.663309Z)
++- Relation [_id#3037,amount#3038,applicationDate#3039,coapplicantId#3040,decisionDate#3041,interestRate#3042,loanId#3043,loanType#3044,primaryApplicantId#3045,references#3046,status#3047,term#3048] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 18:38:53,277 - src.etl.extract - INFO - Extracting PrimaryApplicant data modified since 2025-03-18T18:53:45.323152Z
+2025-03-19 18:38:53,300 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `loans`, `personId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:45.323152Z)
++- Relation [_id#3078,isCoApplicantFor#3079,isReferenceFor#3080,loans#3081,name#3082,pan#3083,personId#3084,primaryApplicantId#3085] MongoRelation(MongoRDD[69] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(isCoApplicantFor,ArrayType(StringType,true),true),StructField(isReferenceFor,ArrayType(StringType,true),true),StructField(loans,ArrayType(StringType,true),true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(primaryApplicantId,StringType,true))))
+
+2025-03-19 18:39:00,614 - src.etl.extract - INFO - Extracting Coapplicant data modified since 2025-03-18T18:53:54.899035Z
+2025-03-19 18:39:00,633 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:54.899035Z)
++- Relation [_id#3111,coApplicantId#3112,linkedTo#3113,loanId#3114,name#3115,pan#3116,personId#3117,relationToPrimary#3118] MongoRelation(MongoRDD[92] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(coApplicantId,StringType,true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(relationToPrimary,StringType,true))))
+
+2025-03-19 18:39:05,769 - src.etl.extract - INFO - Extracting Reference data modified since 2025-03-18T18:54:04.557995Z
+2025-03-19 18:39:05,784 - src.etl.extract - ERROR - Error extracting collection Reference: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:54:04.557995Z)
++- Relation [_id#3144,linkedTo#3145,loanId#3146,name#3147,pan#3148,personId#3149,referenceId#3150,relationToBorrower#3151,yearsKnown#3152] MongoRelation(MongoRDD[115] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(referenceId,StringType,true),StructField(relationToBorrower,StringType,true),StructField(yearsKnown,IntegerType,true))))
+
+2025-03-19 18:39:05,785 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 18:39:05,785 - src.etl.load - INFO - No Person data to load
+2025-03-19 18:39:05,785 - src.etl.load - INFO - No Loan data to load
+2025-03-19 18:39:05,785 - src.etl.load - INFO - No Company data to load
+2025-03-19 18:39:05,785 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 18:39:05,785 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 18:39:05,785 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 18:39:05,787 - src.etl.load - INFO - No Reference data to load
+2025-03-19 18:39:05,787 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 18:39:05,787 - root - INFO - Sync job completed in 36.30 seconds
+2025-03-19 18:39:05,787 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 18:39:05,787 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 18:44:06,710 - root - INFO - Starting incremental sync job at 2025-03-19 18:44:06.710464
+2025-03-19 18:44:07,987 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 18:44:07,994 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 18:44:08,020 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 18:44:08,020 - root - INFO - Extracting data from MongoDB...
+2025-03-19 18:44:14,306 - src.etl.extract - INFO - Extracting Person data modified since 2025-03-19T13:02:21.772290Z
+2025-03-19 18:44:14,333 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`aadhar`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('lastUpdated > 2025-03-19T13:02:21.772290Z)
++- Relation [_id#3179,aadhar#3180,address#3181,companyId#3182,dateOfBirth#3183,email#3184,income#3185,name#3186,pan#3187,personId#3188,phone#3189,position#3190,roles#3191,yearsEmployed#3192] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 18:44:19,827 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 18:44:19,949 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`founded`, `gst_number`, `name`, `phone`, `website`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#3224,address#3225,companyId#3226,founded#3227,gst_number#3228,name#3229,phone#3230,sector#3231,website#3232] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 18:44:27,313 - src.etl.extract - INFO - Extracting Loan data modified since 2025-03-18T18:53:25.663309Z
+2025-03-19 18:44:27,343 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`status`, `amount`, `loanType`, `_id`, `decisionDate`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:25.663309Z)
++- Relation [_id#3259,amount#3260,applicationDate#3261,coapplicantId#3262,decisionDate#3263,interestRate#3264,loanId#3265,loanType#3266,primaryApplicantId#3267,references#3268,status#3269,term#3270] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 18:44:32,752 - src.etl.extract - INFO - Extracting PrimaryApplicant data modified since 2025-03-18T18:53:45.323152Z
+2025-03-19 18:44:32,778 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `loans`, `personId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:45.323152Z)
++- Relation [_id#3300,isCoApplicantFor#3301,isReferenceFor#3302,loans#3303,name#3304,pan#3305,personId#3306,primaryApplicantId#3307] MongoRelation(MongoRDD[69] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(isCoApplicantFor,ArrayType(StringType,true),true),StructField(isReferenceFor,ArrayType(StringType,true),true),StructField(loans,ArrayType(StringType,true),true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(primaryApplicantId,StringType,true))))
+
+2025-03-19 18:44:38,078 - src.etl.extract - INFO - Extracting Coapplicant data modified since 2025-03-18T18:53:54.899035Z
+2025-03-19 18:44:38,100 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:54.899035Z)
++- Relation [_id#3333,coApplicantId#3334,linkedTo#3335,loanId#3336,name#3337,pan#3338,personId#3339,relationToPrimary#3340] MongoRelation(MongoRDD[92] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(coApplicantId,StringType,true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(relationToPrimary,StringType,true))))
+
+2025-03-19 18:44:43,368 - src.etl.extract - INFO - Extracting Reference data modified since 2025-03-18T18:54:04.557995Z
+2025-03-19 18:44:43,389 - src.etl.extract - ERROR - Error extracting collection Reference: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:54:04.557995Z)
++- Relation [_id#3366,linkedTo#3367,loanId#3368,name#3369,pan#3370,personId#3371,referenceId#3372,relationToBorrower#3373,yearsKnown#3374] MongoRelation(MongoRDD[115] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(referenceId,StringType,true),StructField(relationToBorrower,StringType,true),StructField(yearsKnown,IntegerType,true))))
+
+2025-03-19 18:44:43,390 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 18:44:43,391 - src.etl.load - INFO - No Person data to load
+2025-03-19 18:44:43,391 - src.etl.load - INFO - No Loan data to load
+2025-03-19 18:44:43,392 - src.etl.load - INFO - No Company data to load
+2025-03-19 18:44:43,392 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 18:44:43,392 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 18:44:43,392 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 18:44:43,393 - src.etl.load - INFO - No Reference data to load
+2025-03-19 18:44:43,393 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 18:44:43,393 - root - INFO - Sync job completed in 36.68 seconds
+2025-03-19 18:44:43,394 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 18:44:43,394 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 18:49:44,521 - root - INFO - Starting incremental sync job at 2025-03-19 18:49:44.521421
+2025-03-19 18:49:46,066 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 18:49:46,076 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 18:49:46,097 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 18:49:46,099 - root - INFO - Extracting data from MongoDB...
+2025-03-19 18:49:52,619 - src.etl.extract - INFO - Extracting Person data modified since 2025-03-19T13:02:21.772290Z
+2025-03-19 18:49:52,675 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`aadhar`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('lastUpdated > 2025-03-19T13:02:21.772290Z)
++- Relation [_id#3401,aadhar#3402,address#3403,companyId#3404,dateOfBirth#3405,email#3406,income#3407,name#3408,pan#3409,personId#3410,phone#3411,position#3412,roles#3413,yearsEmployed#3414] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 18:49:58,559 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 18:49:58,599 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`founded`, `gst_number`, `name`, `phone`, `website`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#3446,address#3447,companyId#3448,founded#3449,gst_number#3450,name#3451,phone#3452,sector#3453,website#3454] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 18:50:04,114 - src.etl.extract - INFO - Extracting Loan data modified since 2025-03-18T18:53:25.663309Z
+2025-03-19 18:50:04,161 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`status`, `amount`, `loanType`, `_id`, `decisionDate`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:25.663309Z)
++- Relation [_id#3481,amount#3482,applicationDate#3483,coapplicantId#3484,decisionDate#3485,interestRate#3486,loanId#3487,loanType#3488,primaryApplicantId#3489,references#3490,status#3491,term#3492] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 18:50:09,848 - src.etl.extract - INFO - Extracting PrimaryApplicant data modified since 2025-03-18T18:53:45.323152Z
+2025-03-19 18:50:09,891 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `loans`, `personId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:45.323152Z)
++- Relation [_id#3522,isCoApplicantFor#3523,isReferenceFor#3524,loans#3525,name#3526,pan#3527,personId#3528,primaryApplicantId#3529] MongoRelation(MongoRDD[69] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(isCoApplicantFor,ArrayType(StringType,true),true),StructField(isReferenceFor,ArrayType(StringType,true),true),StructField(loans,ArrayType(StringType,true),true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(primaryApplicantId,StringType,true))))
+
+2025-03-19 18:50:15,511 - src.etl.extract - INFO - Extracting Coapplicant data modified since 2025-03-18T18:53:54.899035Z
+2025-03-19 18:50:15,559 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:54.899035Z)
++- Relation [_id#3555,coApplicantId#3556,linkedTo#3557,loanId#3558,name#3559,pan#3560,personId#3561,relationToPrimary#3562] MongoRelation(MongoRDD[92] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(coApplicantId,StringType,true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(relationToPrimary,StringType,true))))
+
+2025-03-19 18:50:21,019 - src.etl.extract - INFO - Extracting Reference data modified since 2025-03-18T18:54:04.557995Z
+2025-03-19 18:50:21,058 - src.etl.extract - ERROR - Error extracting collection Reference: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:54:04.557995Z)
++- Relation [_id#3588,linkedTo#3589,loanId#3590,name#3591,pan#3592,personId#3593,referenceId#3594,relationToBorrower#3595,yearsKnown#3596] MongoRelation(MongoRDD[115] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(referenceId,StringType,true),StructField(relationToBorrower,StringType,true),StructField(yearsKnown,IntegerType,true))))
+
+2025-03-19 18:50:21,061 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 18:50:21,062 - src.etl.load - INFO - No Person data to load
+2025-03-19 18:50:21,062 - src.etl.load - INFO - No Loan data to load
+2025-03-19 18:50:21,063 - src.etl.load - INFO - No Company data to load
+2025-03-19 18:50:21,064 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 18:50:21,065 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 18:50:21,067 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 18:50:21,068 - src.etl.load - INFO - No Reference data to load
+2025-03-19 18:50:21,068 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 18:50:21,069 - root - INFO - Sync job completed in 36.55 seconds
+2025-03-19 18:50:21,069 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 18:50:21,071 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 18:55:22,645 - root - INFO - Starting incremental sync job at 2025-03-19 18:55:22.645869
+2025-03-19 18:55:24,202 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 18:55:24,210 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 18:55:24,247 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 18:55:24,248 - root - INFO - Extracting data from MongoDB...
+2025-03-19 18:55:31,189 - src.etl.extract - INFO - Extracting Person data modified since 2025-03-19T13:02:21.772290Z
+2025-03-19 18:55:31,227 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`aadhar`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('lastUpdated > 2025-03-19T13:02:21.772290Z)
++- Relation [_id#3623,aadhar#3624,address#3625,companyId#3626,dateOfBirth#3627,email#3628,income#3629,name#3630,pan#3631,personId#3632,phone#3633,position#3634,roles#3635,yearsEmployed#3636] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 18:55:36,966 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 18:55:37,014 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`founded`, `gst_number`, `name`, `phone`, `website`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#3668,address#3669,companyId#3670,founded#3671,gst_number#3672,name#3673,phone#3674,sector#3675,website#3676] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 18:55:42,506 - src.etl.extract - INFO - Extracting Loan data modified since 2025-03-18T18:53:25.663309Z
+2025-03-19 18:55:42,554 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`status`, `amount`, `loanType`, `_id`, `decisionDate`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:25.663309Z)
++- Relation [_id#3703,amount#3704,applicationDate#3705,coapplicantId#3706,decisionDate#3707,interestRate#3708,loanId#3709,loanType#3710,primaryApplicantId#3711,references#3712,status#3713,term#3714] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 18:55:48,031 - src.etl.extract - INFO - Extracting PrimaryApplicant data modified since 2025-03-18T18:53:45.323152Z
+2025-03-19 18:55:48,070 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `loans`, `personId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:45.323152Z)
++- Relation [_id#3744,isCoApplicantFor#3745,isReferenceFor#3746,loans#3747,name#3748,pan#3749,personId#3750,primaryApplicantId#3751] MongoRelation(MongoRDD[69] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(isCoApplicantFor,ArrayType(StringType,true),true),StructField(isReferenceFor,ArrayType(StringType,true),true),StructField(loans,ArrayType(StringType,true),true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(primaryApplicantId,StringType,true))))
+
+2025-03-19 18:55:53,625 - src.etl.extract - INFO - Extracting Coapplicant data modified since 2025-03-18T18:53:54.899035Z
+2025-03-19 18:55:53,671 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:54.899035Z)
++- Relation [_id#3777,coApplicantId#3778,linkedTo#3779,loanId#3780,name#3781,pan#3782,personId#3783,relationToPrimary#3784] MongoRelation(MongoRDD[92] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(coApplicantId,StringType,true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(relationToPrimary,StringType,true))))
+
+2025-03-19 18:55:59,249 - src.etl.extract - INFO - Extracting Reference data modified since 2025-03-18T18:54:04.557995Z
+2025-03-19 18:55:59,290 - src.etl.extract - ERROR - Error extracting collection Reference: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:54:04.557995Z)
++- Relation [_id#3810,linkedTo#3811,loanId#3812,name#3813,pan#3814,personId#3815,referenceId#3816,relationToBorrower#3817,yearsKnown#3818] MongoRelation(MongoRDD[115] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(referenceId,StringType,true),StructField(relationToBorrower,StringType,true),StructField(yearsKnown,IntegerType,true))))
+
+2025-03-19 18:55:59,292 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 18:55:59,293 - src.etl.load - INFO - No Person data to load
+2025-03-19 18:55:59,293 - src.etl.load - INFO - No Loan data to load
+2025-03-19 18:55:59,294 - src.etl.load - INFO - No Company data to load
+2025-03-19 18:55:59,294 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 18:55:59,295 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 18:55:59,295 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 18:55:59,295 - src.etl.load - INFO - No Reference data to load
+2025-03-19 18:55:59,295 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 18:55:59,295 - root - INFO - Sync job completed in 36.65 seconds
+2025-03-19 18:55:59,296 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 18:55:59,296 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 19:01:00,656 - root - INFO - Starting incremental sync job at 2025-03-19 19:01:00.656344
+2025-03-19 19:01:02,117 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 19:01:02,126 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 19:01:02,148 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 19:01:02,149 - root - INFO - Extracting data from MongoDB...
+2025-03-19 19:01:08,740 - src.etl.extract - INFO - Extracting Person data modified since 2025-03-19T13:02:21.772290Z
+2025-03-19 19:01:08,790 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`aadhar`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('lastUpdated > 2025-03-19T13:02:21.772290Z)
++- Relation [_id#3845,aadhar#3846,address#3847,companyId#3848,dateOfBirth#3849,email#3850,income#3851,name#3852,pan#3853,personId#3854,phone#3855,position#3856,roles#3857,yearsEmployed#3858] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 19:01:16,113 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 19:01:16,161 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`founded`, `gst_number`, `name`, `phone`, `website`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#3890,address#3891,companyId#3892,founded#3893,gst_number#3894,name#3895,phone#3896,sector#3897,website#3898] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 19:01:21,951 - src.etl.extract - INFO - Extracting Loan data modified since 2025-03-18T18:53:25.663309Z
+2025-03-19 19:01:22,001 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`status`, `amount`, `loanType`, `_id`, `decisionDate`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:25.663309Z)
++- Relation [_id#3925,amount#3926,applicationDate#3927,coapplicantId#3928,decisionDate#3929,interestRate#3930,loanId#3931,loanType#3932,primaryApplicantId#3933,references#3934,status#3935,term#3936] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 19:01:27,736 - src.etl.extract - INFO - Extracting PrimaryApplicant data modified since 2025-03-18T18:53:45.323152Z
+2025-03-19 19:01:27,777 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `loans`, `personId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:45.323152Z)
++- Relation [_id#3966,isCoApplicantFor#3967,isReferenceFor#3968,loans#3969,name#3970,pan#3971,personId#3972,primaryApplicantId#3973] MongoRelation(MongoRDD[69] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(isCoApplicantFor,ArrayType(StringType,true),true),StructField(isReferenceFor,ArrayType(StringType,true),true),StructField(loans,ArrayType(StringType,true),true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(primaryApplicantId,StringType,true))))
+
+2025-03-19 19:01:33,635 - src.etl.extract - INFO - Extracting Coapplicant data modified since 2025-03-18T18:53:54.899035Z
+2025-03-19 19:01:33,686 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:54.899035Z)
++- Relation [_id#3999,coApplicantId#4000,linkedTo#4001,loanId#4002,name#4003,pan#4004,personId#4005,relationToPrimary#4006] MongoRelation(MongoRDD[92] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(coApplicantId,StringType,true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(relationToPrimary,StringType,true))))
+
+2025-03-19 19:01:39,474 - src.etl.extract - INFO - Extracting Reference data modified since 2025-03-18T18:54:04.557995Z
+2025-03-19 19:01:39,524 - src.etl.extract - ERROR - Error extracting collection Reference: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:54:04.557995Z)
++- Relation [_id#4032,linkedTo#4033,loanId#4034,name#4035,pan#4036,personId#4037,referenceId#4038,relationToBorrower#4039,yearsKnown#4040] MongoRelation(MongoRDD[115] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(referenceId,StringType,true),StructField(relationToBorrower,StringType,true),StructField(yearsKnown,IntegerType,true))))
+
+2025-03-19 19:01:39,526 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 19:01:39,527 - src.etl.load - INFO - No Person data to load
+2025-03-19 19:01:39,527 - src.etl.load - INFO - No Loan data to load
+2025-03-19 19:01:39,528 - src.etl.load - INFO - No Company data to load
+2025-03-19 19:01:39,528 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 19:01:39,528 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 19:01:39,530 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 19:01:39,530 - src.etl.load - INFO - No Reference data to load
+2025-03-19 19:01:39,531 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 19:01:39,531 - root - INFO - Sync job completed in 38.88 seconds
+2025-03-19 19:01:39,533 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 19:01:39,534 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 19:06:40,666 - root - INFO - Starting incremental sync job at 2025-03-19 19:06:40.666666
+2025-03-19 19:06:41,980 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 19:06:41,989 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 19:06:42,010 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 19:06:42,010 - root - INFO - Extracting data from MongoDB...
+2025-03-19 19:06:48,068 - src.etl.extract - INFO - Extracting Person data modified since 2025-03-19T13:02:21.772290Z
+2025-03-19 19:06:48,097 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`aadhar`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('lastUpdated > 2025-03-19T13:02:21.772290Z)
++- Relation [_id#4067,aadhar#4068,address#4069,companyId#4070,dateOfBirth#4071,email#4072,income#4073,name#4074,pan#4075,personId#4076,phone#4077,position#4078,roles#4079,yearsEmployed#4080] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 19:06:53,784 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 19:06:53,836 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`founded`, `gst_number`, `name`, `phone`, `website`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#4112,address#4113,companyId#4114,founded#4115,gst_number#4116,name#4117,phone#4118,sector#4119,website#4120] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 19:06:59,310 - src.etl.extract - INFO - Extracting Loan data modified since 2025-03-18T18:53:25.663309Z
+2025-03-19 19:06:59,359 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`status`, `amount`, `loanType`, `_id`, `decisionDate`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:25.663309Z)
++- Relation [_id#4147,amount#4148,applicationDate#4149,coapplicantId#4150,decisionDate#4151,interestRate#4152,loanId#4153,loanType#4154,primaryApplicantId#4155,references#4156,status#4157,term#4158] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 19:07:04,819 - src.etl.extract - INFO - Extracting PrimaryApplicant data modified since 2025-03-18T18:53:45.323152Z
+2025-03-19 19:07:04,854 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `loans`, `personId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:45.323152Z)
++- Relation [_id#4188,isCoApplicantFor#4189,isReferenceFor#4190,loans#4191,name#4192,pan#4193,personId#4194,primaryApplicantId#4195] MongoRelation(MongoRDD[69] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(isCoApplicantFor,ArrayType(StringType,true),true),StructField(isReferenceFor,ArrayType(StringType,true),true),StructField(loans,ArrayType(StringType,true),true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(primaryApplicantId,StringType,true))))
+
+2025-03-19 19:07:10,251 - src.etl.extract - INFO - Extracting Coapplicant data modified since 2025-03-18T18:53:54.899035Z
+2025-03-19 19:07:10,286 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:54.899035Z)
++- Relation [_id#4221,coApplicantId#4222,linkedTo#4223,loanId#4224,name#4225,pan#4226,personId#4227,relationToPrimary#4228] MongoRelation(MongoRDD[92] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(coApplicantId,StringType,true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(relationToPrimary,StringType,true))))
+
+2025-03-19 19:07:15,943 - src.etl.extract - INFO - Extracting Reference data modified since 2025-03-18T18:54:04.557995Z
+2025-03-19 19:07:15,989 - src.etl.extract - ERROR - Error extracting collection Reference: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:54:04.557995Z)
++- Relation [_id#4254,linkedTo#4255,loanId#4256,name#4257,pan#4258,personId#4259,referenceId#4260,relationToBorrower#4261,yearsKnown#4262] MongoRelation(MongoRDD[115] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(referenceId,StringType,true),StructField(relationToBorrower,StringType,true),StructField(yearsKnown,IntegerType,true))))
+
+2025-03-19 19:07:15,991 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 19:07:15,991 - src.etl.load - INFO - No Person data to load
+2025-03-19 19:07:15,992 - src.etl.load - INFO - No Loan data to load
+2025-03-19 19:07:15,992 - src.etl.load - INFO - No Company data to load
+2025-03-19 19:07:15,993 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 19:07:15,993 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 19:07:15,993 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 19:07:15,995 - src.etl.load - INFO - No Reference data to load
+2025-03-19 19:07:15,995 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 19:07:15,997 - root - INFO - Sync job completed in 35.33 seconds
+2025-03-19 19:07:15,999 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 19:07:15,999 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 19:12:45,945 - root - INFO - Starting incremental sync job at 2025-03-19 19:12:45.945641
+2025-03-19 19:12:53,394 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 19:12:53,415 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 19:12:53,439 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 19:12:53,439 - root - INFO - Extracting data from MongoDB...
+2025-03-19 19:13:01,789 - src.etl.extract - INFO - Extracting Person data modified since 2025-03-19T13:02:21.772290Z
+2025-03-19 19:13:01,810 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`aadhar`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('lastUpdated > 2025-03-19T13:02:21.772290Z)
++- Relation [_id#4289,aadhar#4290,address#4291,companyId#4292,dateOfBirth#4293,email#4294,income#4295,name#4296,pan#4297,personId#4298,phone#4299,position#4300,roles#4301,yearsEmployed#4302] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 19:13:07,345 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 19:13:07,364 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`founded`, `gst_number`, `name`, `phone`, `website`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#4334,address#4335,companyId#4336,founded#4337,gst_number#4338,name#4339,phone#4340,sector#4341,website#4342] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 19:13:12,737 - src.etl.extract - INFO - Extracting Loan data modified since 2025-03-18T18:53:25.663309Z
+2025-03-19 19:13:12,748 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`status`, `amount`, `loanType`, `_id`, `decisionDate`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:25.663309Z)
++- Relation [_id#4369,amount#4370,applicationDate#4371,coapplicantId#4372,decisionDate#4373,interestRate#4374,loanId#4375,loanType#4376,primaryApplicantId#4377,references#4378,status#4379,term#4380] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 19:13:17,863 - src.etl.extract - INFO - Extracting PrimaryApplicant data modified since 2025-03-18T18:53:45.323152Z
+2025-03-19 19:13:17,874 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `loans`, `personId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:45.323152Z)
++- Relation [_id#4410,isCoApplicantFor#4411,isReferenceFor#4412,loans#4413,name#4414,pan#4415,personId#4416,primaryApplicantId#4417] MongoRelation(MongoRDD[69] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(isCoApplicantFor,ArrayType(StringType,true),true),StructField(isReferenceFor,ArrayType(StringType,true),true),StructField(loans,ArrayType(StringType,true),true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(primaryApplicantId,StringType,true))))
+
+2025-03-19 19:13:23,199 - src.etl.extract - INFO - Extracting Coapplicant data modified since 2025-03-18T18:53:54.899035Z
+2025-03-19 19:13:23,219 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:54.899035Z)
++- Relation [_id#4443,coApplicantId#4444,linkedTo#4445,loanId#4446,name#4447,pan#4448,personId#4449,relationToPrimary#4450] MongoRelation(MongoRDD[92] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(coApplicantId,StringType,true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(relationToPrimary,StringType,true))))
+
+2025-03-19 19:13:28,436 - src.etl.extract - INFO - Extracting Reference data modified since 2025-03-18T18:54:04.557995Z
+2025-03-19 19:13:28,448 - src.etl.extract - ERROR - Error extracting collection Reference: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:54:04.557995Z)
++- Relation [_id#4476,linkedTo#4477,loanId#4478,name#4479,pan#4480,personId#4481,referenceId#4482,relationToBorrower#4483,yearsKnown#4484] MongoRelation(MongoRDD[115] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(referenceId,StringType,true),StructField(relationToBorrower,StringType,true),StructField(yearsKnown,IntegerType,true))))
+
+2025-03-19 19:13:28,449 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 19:13:28,449 - src.etl.load - INFO - No Person data to load
+2025-03-19 19:13:28,449 - src.etl.load - INFO - No Loan data to load
+2025-03-19 19:13:28,449 - src.etl.load - INFO - No Company data to load
+2025-03-19 19:13:28,450 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 19:13:28,450 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 19:13:28,450 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 19:13:28,450 - src.etl.load - INFO - No Reference data to load
+2025-03-19 19:13:28,450 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 19:13:28,450 - root - INFO - Sync job completed in 42.50 seconds
+2025-03-19 19:13:28,451 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 19:13:28,451 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 19:18:29,179 - root - INFO - Starting incremental sync job at 2025-03-19 19:18:29.179727
+2025-03-19 19:18:30,232 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 19:18:30,240 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 19:18:30,262 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 19:18:30,263 - root - INFO - Extracting data from MongoDB...
+2025-03-19 19:18:36,908 - src.etl.extract - INFO - Extracting Person data modified since 2025-03-19T13:02:21.772290Z
+2025-03-19 19:18:36,940 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`aadhar`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('lastUpdated > 2025-03-19T13:02:21.772290Z)
++- Relation [_id#4511,aadhar#4512,address#4513,companyId#4514,dateOfBirth#4515,email#4516,income#4517,name#4518,pan#4519,personId#4520,phone#4521,position#4522,roles#4523,yearsEmployed#4524] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 19:18:44,756 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 19:18:44,776 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`founded`, `gst_number`, `name`, `phone`, `website`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#4556,address#4557,companyId#4558,founded#4559,gst_number#4560,name#4561,phone#4562,sector#4563,website#4564] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 19:18:51,385 - src.etl.extract - INFO - Extracting Loan data modified since 2025-03-18T18:53:25.663309Z
+2025-03-19 19:18:51,405 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`status`, `amount`, `loanType`, `_id`, `decisionDate`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:25.663309Z)
++- Relation [_id#4591,amount#4592,applicationDate#4593,coapplicantId#4594,decisionDate#4595,interestRate#4596,loanId#4597,loanType#4598,primaryApplicantId#4599,references#4600,status#4601,term#4602] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 19:18:56,843 - src.etl.extract - INFO - Extracting PrimaryApplicant data modified since 2025-03-18T18:53:45.323152Z
+2025-03-19 19:18:56,862 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `loans`, `personId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:45.323152Z)
++- Relation [_id#4632,isCoApplicantFor#4633,isReferenceFor#4634,loans#4635,name#4636,pan#4637,personId#4638,primaryApplicantId#4639] MongoRelation(MongoRDD[69] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(isCoApplicantFor,ArrayType(StringType,true),true),StructField(isReferenceFor,ArrayType(StringType,true),true),StructField(loans,ArrayType(StringType,true),true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(primaryApplicantId,StringType,true))))
+
+2025-03-19 19:19:02,372 - src.etl.extract - INFO - Extracting Coapplicant data modified since 2025-03-18T18:53:54.899035Z
+2025-03-19 19:19:02,397 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:54.899035Z)
++- Relation [_id#4665,coApplicantId#4666,linkedTo#4667,loanId#4668,name#4669,pan#4670,personId#4671,relationToPrimary#4672] MongoRelation(MongoRDD[92] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(coApplicantId,StringType,true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(relationToPrimary,StringType,true))))
+
+2025-03-19 19:19:07,775 - src.etl.extract - INFO - Extracting Reference data modified since 2025-03-18T18:54:04.557995Z
+2025-03-19 19:19:07,794 - src.etl.extract - ERROR - Error extracting collection Reference: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:54:04.557995Z)
++- Relation [_id#4698,linkedTo#4699,loanId#4700,name#4701,pan#4702,personId#4703,referenceId#4704,relationToBorrower#4705,yearsKnown#4706] MongoRelation(MongoRDD[115] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(referenceId,StringType,true),StructField(relationToBorrower,StringType,true),StructField(yearsKnown,IntegerType,true))))
+
+2025-03-19 19:19:07,795 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 19:19:07,795 - src.etl.load - INFO - No Person data to load
+2025-03-19 19:19:07,796 - src.etl.load - INFO - No Loan data to load
+2025-03-19 19:19:07,796 - src.etl.load - INFO - No Company data to load
+2025-03-19 19:19:07,796 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 19:19:07,796 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 19:19:07,797 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 19:19:07,797 - src.etl.load - INFO - No Reference data to load
+2025-03-19 19:19:07,797 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 19:19:07,798 - root - INFO - Sync job completed in 38.62 seconds
+2025-03-19 19:19:07,798 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 19:19:07,798 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 19:24:08,680 - root - INFO - Starting incremental sync job at 2025-03-19 19:24:08.680872
+2025-03-19 19:24:09,571 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 19:24:09,576 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 19:24:09,586 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 19:24:09,586 - root - INFO - Extracting data from MongoDB...
+2025-03-19 19:24:16,216 - src.etl.extract - INFO - Extracting Person data modified since 2025-03-19T13:02:21.772290Z
+2025-03-19 19:24:16,255 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`aadhar`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('lastUpdated > 2025-03-19T13:02:21.772290Z)
++- Relation [_id#4733,aadhar#4734,address#4735,companyId#4736,dateOfBirth#4737,email#4738,income#4739,name#4740,pan#4741,personId#4742,phone#4743,position#4744,roles#4745,yearsEmployed#4746] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 19:24:21,817 - src.etl.extract - INFO - Extracting Company data modified since 2025-03-18T18:53:34.615993Z
+2025-03-19 19:24:21,834 - src.etl.extract - ERROR - Error extracting collection Company: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`founded`, `gst_number`, `name`, `phone`, `website`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:34.615993Z)
++- Relation [_id#4778,address#4779,companyId#4780,founded#4781,gst_number#4782,name#4783,phone#4784,sector#4785,website#4786] MongoRelation(MongoRDD[23] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(founded,StringType,true),StructField(gst_number,StringType,true),StructField(name,StringType,true),StructField(phone,StringType,true),StructField(sector,StringType,true),StructField(website,StringType,true))))
+
+2025-03-19 19:24:27,558 - src.etl.extract - INFO - Extracting Loan data modified since 2025-03-18T18:53:25.663309Z
+2025-03-19 19:24:27,573 - src.etl.extract - ERROR - Error extracting collection Loan: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`status`, `amount`, `loanType`, `_id`, `decisionDate`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:25.663309Z)
++- Relation [_id#4813,amount#4814,applicationDate#4815,coapplicantId#4816,decisionDate#4817,interestRate#4818,loanId#4819,loanType#4820,primaryApplicantId#4821,references#4822,status#4823,term#4824] MongoRelation(MongoRDD[46] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(amount,IntegerType,true),StructField(applicationDate,TimestampType,true),StructField(coapplicantId,StringType,true),StructField(decisionDate,TimestampType,true),StructField(interestRate,DoubleType,true),StructField(loanId,StringType,true),StructField(loanType,StringType,true),StructField(primaryApplicantId,StringType,true),StructField(references,ArrayType(StringType,true),true),StructField(status,StringType,true),StructField(term,IntegerType,true))))
+
+2025-03-19 19:24:33,079 - src.etl.extract - INFO - Extracting PrimaryApplicant data modified since 2025-03-18T18:53:45.323152Z
+2025-03-19 19:24:33,092 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `loans`, `personId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:45.323152Z)
++- Relation [_id#4854,isCoApplicantFor#4855,isReferenceFor#4856,loans#4857,name#4858,pan#4859,personId#4860,primaryApplicantId#4861] MongoRelation(MongoRDD[69] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(isCoApplicantFor,ArrayType(StringType,true),true),StructField(isReferenceFor,ArrayType(StringType,true),true),StructField(loans,ArrayType(StringType,true),true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(primaryApplicantId,StringType,true))))
+
+2025-03-19 19:24:38,427 - src.etl.extract - INFO - Extracting Coapplicant data modified since 2025-03-18T18:53:54.899035Z
+2025-03-19 19:24:38,457 - src.etl.extract - ERROR - Error extracting collection Coapplicant: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:53:54.899035Z)
++- Relation [_id#4887,coApplicantId#4888,linkedTo#4889,loanId#4890,name#4891,pan#4892,personId#4893,relationToPrimary#4894] MongoRelation(MongoRDD[92] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(coApplicantId,StringType,true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(relationToPrimary,StringType,true))))
+
+2025-03-19 19:24:43,865 - src.etl.extract - INFO - Extracting Reference data modified since 2025-03-18T18:54:04.557995Z
+2025-03-19 19:24:43,882 - src.etl.extract - ERROR - Error extracting collection Reference: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`name`, `pan`, `_id`, `linkedTo`, `loanId`].;
+'Filter ('lastUpdated > 2025-03-18T18:54:04.557995Z)
++- Relation [_id#4920,linkedTo#4921,loanId#4922,name#4923,pan#4924,personId#4925,referenceId#4926,relationToBorrower#4927,yearsKnown#4928] MongoRelation(MongoRDD[115] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(linkedTo,StringType,true),StructField(loanId,StringType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(referenceId,StringType,true),StructField(relationToBorrower,StringType,true),StructField(yearsKnown,IntegerType,true))))
+
+2025-03-19 19:24:43,883 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 19:24:43,883 - src.etl.load - INFO - No Person data to load
+2025-03-19 19:24:43,883 - src.etl.load - INFO - No Loan data to load
+2025-03-19 19:24:43,884 - src.etl.load - INFO - No Company data to load
+2025-03-19 19:24:43,884 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 19:24:43,884 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 19:24:43,884 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 19:24:43,884 - src.etl.load - INFO - No Reference data to load
+2025-03-19 19:24:43,885 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 19:24:43,885 - root - INFO - Sync job completed in 35.20 seconds
+2025-03-19 19:24:43,885 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 19:24:43,885 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 19:27:26,127 - root - ERROR - Service stopped due to error: 'NoneType' object has no attribute 'sc'
+Traceback (most recent call last):
+  File ".\src\main.py", line 97, in main
+    time.sleep(1)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+AttributeError: 'NoneType' object has no attribute 'sc'

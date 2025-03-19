@@ -1,0 +1,183 @@
+2025-03-19 00:22:13,034 - root - INFO - Starting MongoDB to Neo4j sync service
+2025-03-19 00:22:13,034 - root - INFO - Sync interval: 30 minutes
+2025-03-19 00:22:13,035 - root - INFO - Starting full sync job at 2025-03-19 00:22:13.035048
+2025-03-19 00:22:20,390 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 00:22:20,574 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 00:22:20,588 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 00:22:20,588 - root - INFO - Extracting data from MongoDB...
+2025-03-19 00:22:27,159 - src.etl.extract - INFO - Extracted 50 records from Person
+2025-03-19 00:22:28,173 - src.etl.extract - INFO - Extracted 10 records from Company
+2025-03-19 00:22:29,098 - src.etl.extract - INFO - Extracted 93 records from Loan
+2025-03-19 00:22:29,942 - src.etl.extract - INFO - Extracted 57 records from PrimaryApplicant
+2025-03-19 00:22:30,677 - src.etl.extract - INFO - Extracted 93 records from Coapplicant
+2025-03-19 00:22:31,536 - src.etl.extract - INFO - Extracted 183 records from Reference
+2025-03-19 00:22:31,545 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 00:22:37,614 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(0) already exists with label `Person` and property `personId` = 'PERSON001'
+2025-03-19 00:22:38,979 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(1) already exists with label `Person` and property `personId` = 'PERSON002'
+2025-03-19 00:22:40,184 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(2) already exists with label `Person` and property `personId` = 'PERSON003'
+2025-03-19 00:22:41,348 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(3) already exists with label `Person` and property `personId` = 'PERSON004'
+2025-03-19 00:22:42,499 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(4) already exists with label `Person` and property `personId` = 'PERSON005'
+2025-03-19 00:22:43,627 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(5) already exists with label `Person` and property `personId` = 'PERSON006'
+2025-03-19 00:22:44,802 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(6) already exists with label `Person` and property `personId` = 'PERSON007'
+2025-03-19 00:22:45,950 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(7) already exists with label `Person` and property `personId` = 'PERSON008'
+2025-03-19 00:22:47,102 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(8) already exists with label `Person` and property `personId` = 'PERSON009'
+2025-03-19 00:22:48,043 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(9) already exists with label `Person` and property `personId` = 'PERSON010'
+2025-03-19 00:22:49,139 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(10) already exists with label `Person` and property `personId` = 'PERSON011'
+2025-03-19 00:22:50,162 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(11) already exists with label `Person` and property `personId` = 'PERSON012'
+2025-03-19 00:22:51,254 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(12) already exists with label `Person` and property `personId` = 'PERSON013'
+2025-03-19 00:22:52,262 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(13) already exists with label `Person` and property `personId` = 'PERSON014'
+2025-03-19 00:22:53,209 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(14) already exists with label `Person` and property `personId` = 'PERSON015'
+2025-03-19 00:22:54,153 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(15) already exists with label `Person` and property `personId` = 'PERSON016'
+2025-03-19 00:22:55,192 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(16) already exists with label `Person` and property `personId` = 'PERSON017'
+2025-03-19 00:22:56,078 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(17) already exists with label `Person` and property `personId` = 'PERSON018'
+2025-03-19 00:22:57,006 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(18) already exists with label `Person` and property `personId` = 'PERSON019'
+2025-03-19 00:22:57,992 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(19) already exists with label `Person` and property `personId` = 'PERSON020'
+2025-03-19 00:22:59,046 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(20) already exists with label `Person` and property `personId` = 'PERSON021'
+2025-03-19 00:23:00,004 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(21) already exists with label `Person` and property `personId` = 'PERSON022'
+2025-03-19 00:23:00,848 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(22) already exists with label `Person` and property `personId` = 'PERSON023'
+2025-03-19 00:23:01,705 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(23) already exists with label `Person` and property `personId` = 'PERSON024'
+2025-03-19 00:23:02,699 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(24) already exists with label `Person` and property `personId` = 'PERSON025'
+2025-03-19 00:23:03,576 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(25) already exists with label `Person` and property `personId` = 'PERSON026'
+2025-03-19 00:23:04,503 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(26) already exists with label `Person` and property `personId` = 'PERSON027'
+2025-03-19 00:23:05,400 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(27) already exists with label `Person` and property `personId` = 'PERSON028'
+2025-03-19 00:23:06,300 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(28) already exists with label `Person` and property `personId` = 'PERSON029'
+2025-03-19 00:23:07,239 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(29) already exists with label `Person` and property `personId` = 'PERSON030'
+2025-03-19 00:23:08,116 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(30) already exists with label `Person` and property `personId` = 'PERSON031'
+2025-03-19 00:23:08,943 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(31) already exists with label `Person` and property `personId` = 'PERSON032'
+2025-03-19 00:23:09,801 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(32) already exists with label `Person` and property `personId` = 'PERSON033'
+2025-03-19 00:23:10,642 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(33) already exists with label `Person` and property `personId` = 'PERSON034'
+2025-03-19 00:23:11,447 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(34) already exists with label `Person` and property `personId` = 'PERSON035'
+2025-03-19 00:23:12,290 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(35) already exists with label `Person` and property `personId` = 'PERSON036'
+2025-03-19 00:23:13,156 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(36) already exists with label `Person` and property `personId` = 'PERSON037'
+2025-03-19 00:23:13,956 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(37) already exists with label `Person` and property `personId` = 'PERSON038'
+2025-03-19 00:23:14,956 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(38) already exists with label `Person` and property `personId` = 'PERSON039'
+2025-03-19 00:23:15,737 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(39) already exists with label `Person` and property `personId` = 'PERSON040'
+2025-03-19 00:23:16,593 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(40) already exists with label `Person` and property `personId` = 'PERSON041'
+2025-03-19 00:23:17,352 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(41) already exists with label `Person` and property `personId` = 'PERSON042'
+2025-03-19 00:23:18,058 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(42) already exists with label `Person` and property `personId` = 'PERSON043'
+2025-03-19 00:23:18,940 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(43) already exists with label `Person` and property `personId` = 'PERSON044'
+2025-03-19 00:23:19,784 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(44) already exists with label `Person` and property `personId` = 'PERSON045'
+2025-03-19 00:23:20,542 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(45) already exists with label `Person` and property `personId` = 'PERSON046'
+2025-03-19 00:23:21,438 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(46) already exists with label `Person` and property `personId` = 'PERSON047'
+2025-03-19 00:23:22,319 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(47) already exists with label `Person` and property `personId` = 'PERSON048'
+2025-03-19 00:23:23,243 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(48) already exists with label `Person` and property `personId` = 'PERSON049'
+2025-03-19 00:23:24,060 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(49) already exists with label `Person` and property `personId` = 'PERSON050'
+2025-03-19 00:23:24,062 - src.etl.load - INFO - Loaded 0 Person nodes
+2025-03-19 00:23:25,663 - src.etl.load - INFO - Loaded 93 Loan nodes
+2025-03-19 00:23:33,781 - src.spark.session - INFO - Updated sync timestamp for Loan to 2025-03-18T18:53:25.663309Z
+2025-03-19 00:23:34,612 - src.etl.load - INFO - Loaded 10 Company nodes
+2025-03-19 00:23:41,888 - src.spark.session - INFO - Updated sync timestamp for Company to 2025-03-18T18:53:34.615993Z
+2025-03-19 00:23:41,889 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 00:23:45,323 - src.etl.load - INFO - Created 93 PrimaryApplicant-Loan relationships
+2025-03-19 00:23:52,243 - src.spark.session - INFO - Updated sync timestamp for PrimaryApplicant to 2025-03-18T18:53:45.323152Z
+2025-03-19 00:23:54,899 - src.etl.load - INFO - Created 93 Loan-CoApplicant relationships
+2025-03-19 00:24:01,758 - src.spark.session - INFO - Updated sync timestamp for Coapplicant to 2025-03-18T18:53:54.899035Z
+2025-03-19 00:24:04,557 - src.etl.load - INFO - Created 183 Loan-Reference relationships
+2025-03-19 00:24:11,290 - src.spark.session - INFO - Updated sync timestamp for Reference to 2025-03-18T18:54:04.557995Z
+2025-03-19 00:24:12,870 - src.etl.load - INFO - Created 50 Person-Company relationships
+2025-03-19 00:24:12,871 - root - INFO - Sync job completed in 119.84 seconds
+2025-03-19 00:24:12,871 - root - INFO - Nodes loaded: 0 Persons, 93 Loans, 10 Companies
+2025-03-19 00:24:12,871 - root - INFO - Relationships loaded: 93 Primary, 93 CoApplicant, 183 Reference, 50 Company
+2025-03-19 06:01:11,529 - root - INFO - Starting incremental sync job at 2025-03-19 06:01:11.529365
+2025-03-19 06:01:20,042 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 06:01:20,048 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 06:01:20,065 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 06:01:20,066 - root - INFO - Extracting data from MongoDB...
+2025-03-19 10:37:47,411 - src.spark.session - WARNING - Could not get last sync timestamp: An error occurred while calling o1654.collectToPython.
+: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches com.mongodb.client.internal.MongoClientDelegate$1@297b6ea. Client view of cluster state is {type=REPLICA_SET, servers=[{address=cluster0-shard-00-02.dttff.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.SocketException: Network is unreachable: connect}}, {address=cluster0-shard-00-00.dttff.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.SocketException: Network is unreachable: connect}}, {address=cluster0-shard-00-01.dttff.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.SocketException: Network is unreachable: connect}}]
+	at com.mongodb.internal.connection.BaseCluster.createTimeoutException(BaseCluster.java:403)
+	at com.mongodb.internal.connection.BaseCluster.selectServer(BaseCluster.java:118)
+	at com.mongodb.internal.connection.AbstractMultiServerCluster.selectServer(AbstractMultiServerCluster.java:54)
+	at com.mongodb.client.internal.MongoClientDelegate.getConnectedClusterDescription(MongoClientDelegate.java:149)
+	at com.mongodb.client.internal.MongoClientDelegate.createClientSession(MongoClientDelegate.java:98)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.getClientSession(MongoClientDelegate.java:278)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.execute(MongoClientDelegate.java:182)
+	at com.mongodb.client.internal.MongoCollectionImpl.executeCount(MongoCollectionImpl.java:222)
+	at com.mongodb.client.internal.MongoCollectionImpl.countDocuments(MongoCollectionImpl.java:191)
+	at com.mongodb.client.internal.MongoCollectionImpl.countDocuments(MongoCollectionImpl.java:186)
+	at com.mongodb.spark.rdd.partitioner.MongoSamplePartitioner.$anonfun$partitions$6(MongoSamplePartitioner.scala:88)
+	at com.mongodb.spark.rdd.partitioner.MongoSamplePartitioner.$anonfun$partitions$6$adapted(MongoSamplePartitioner.scala:88)
+	at com.mongodb.spark.MongoConnector.$anonfun$withCollectionDo$1(MongoConnector.scala:186)
+	at com.mongodb.spark.MongoConnector.$anonfun$withDatabaseDo$1(MongoConnector.scala:171)
+	at com.mongodb.spark.MongoConnector.withMongoClientDo(MongoConnector.scala:154)
+	at com.mongodb.spark.MongoConnector.withDatabaseDo(MongoConnector.scala:171)
+	at com.mongodb.spark.MongoConnector.withCollectionDo(MongoConnector.scala:184)
+	at com.mongodb.spark.rdd.partitioner.MongoSamplePartitioner.partitions(MongoSamplePartitioner.scala:88)
+	at com.mongodb.spark.rdd.partitioner.DefaultMongoPartitioner.partitions(DefaultMongoPartitioner.scala:34)
+	at com.mongodb.spark.rdd.MongoRDD.getPartitions(MongoRDD.scala:135)
+	at org.apache.spark.rdd.RDD.$anonfun$partitions$2(RDD.scala:294)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:290)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD.$anonfun$partitions$2(RDD.scala:294)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:290)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD.$anonfun$partitions$2(RDD.scala:294)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:290)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD.$anonfun$partitions$2(RDD.scala:294)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:290)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD.$anonfun$partitions$2(RDD.scala:294)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:290)
+	at org.apache.spark.sql.execution.SparkPlan.executeTake(SparkPlan.scala:501)
+	at org.apache.spark.sql.execution.SparkPlan.executeTake(SparkPlan.scala:483)
+	at org.apache.spark.sql.execution.CollectLimitExec.executeCollect(limit.scala:61)
+	at org.apache.spark.sql.Dataset.$anonfun$collectToPython$1(Dataset.scala:4149)
+	at org.apache.spark.sql.Dataset.$anonfun$withAction$2(Dataset.scala:4323)
+	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+	at org.apache.spark.sql.Dataset.$anonfun$withAction$1(Dataset.scala:4321)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.Dataset.withAction(Dataset.scala:4321)
+	at org.apache.spark.sql.Dataset.collectToPython(Dataset.scala:4146)
+	at jdk.internal.reflect.GeneratedMethodAccessor71.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-03-19 10:37:47,430 - src.etl.extract - INFO - Extracting Person data modified since 1970-01-01T00:00:00.000Z
+2025-03-19 10:37:49,129 - src.etl.extract - ERROR - Error extracting collection Person: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `lastUpdated` cannot be resolved. Did you mean one of the following? [`aadhar`, `name`, `pan`, `phone`, `_id`].;
+'Filter ('lastUpdated > 1970-01-01T00:00:00.000Z)
++- Relation [_id#2944,aadhar#2945,address#2946,companyId#2947,dateOfBirth#2948,email#2949,income#2950,name#2951,pan#2952,personId#2953,phone#2954,position#2955,roles#2956,yearsEmployed#2957] MongoRelation(MongoRDD[0] at RDD at MongoRDD.scala:51,Some(StructType(StructField(_id,StructType(StructField(oid,StringType,true)),true),StructField(aadhar,StringType,true),StructField(address,StringType,true),StructField(companyId,StringType,true),StructField(dateOfBirth,StringType,true),StructField(email,StringType,true),StructField(income,IntegerType,true),StructField(name,StringType,true),StructField(pan,StringType,true),StructField(personId,StringType,true),StructField(phone,StringType,true),StructField(position,StringType,true),StructField(roles,StructType(StructField(coApplicant,ArrayType(StringType,true),true),StructField(primaryApplicant,ArrayType(StringType,true),true),StructField(reference,ArrayType(StringType,true),true)),true),StructField(yearsEmployed,IntegerType,true))))
+
+2025-03-19 10:37:49,394 - src.etl.extract - ERROR - Error extracting collection Company: requirement failed: Invalid uri: 'mongodb+srv://chinthanamj:Contact1234@cluster0.dttff.mongodb.net/Plan5.Company'
+2025-03-19 10:37:49,483 - src.etl.extract - ERROR - Error extracting collection Loan: requirement failed: Invalid uri: 'mongodb+srv://chinthanamj:Contact1234@cluster0.dttff.mongodb.net/Plan5.Loan'
+2025-03-19 10:37:49,558 - src.etl.extract - ERROR - Error extracting collection PrimaryApplicant: requirement failed: Invalid uri: 'mongodb+srv://chinthanamj:Contact1234@cluster0.dttff.mongodb.net/Plan5.PrimaryApplicant'
+2025-03-19 10:37:49,628 - src.etl.extract - ERROR - Error extracting collection Coapplicant: requirement failed: Invalid uri: 'mongodb+srv://chinthanamj:Contact1234@cluster0.dttff.mongodb.net/Plan5.Coapplicant'
+2025-03-19 10:37:49,872 - src.etl.extract - ERROR - Error extracting collection Reference: requirement failed: Invalid uri: 'mongodb+srv://chinthanamj:Contact1234@cluster0.dttff.mongodb.net/Plan5.Reference'
+2025-03-19 10:37:49,873 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 10:37:49,873 - src.etl.load - INFO - No Person data to load
+2025-03-19 10:37:49,873 - src.etl.load - INFO - No Loan data to load
+2025-03-19 10:37:49,874 - src.etl.load - INFO - No Company data to load
+2025-03-19 10:37:49,874 - root - INFO - Loading relationships into Neo4j...
+2025-03-19 10:37:49,875 - src.etl.load - INFO - No PrimaryApplicant data to load
+2025-03-19 10:37:49,875 - src.etl.load - INFO - No CoApplicant data to load
+2025-03-19 10:37:49,875 - src.etl.load - INFO - No Reference data to load
+2025-03-19 10:37:49,876 - src.etl.load - INFO - No Person data to load Person-Company relationships
+2025-03-19 10:37:49,876 - root - INFO - Sync job completed in 16598.35 seconds
+2025-03-19 10:37:49,877 - root - INFO - Nodes loaded: 0 Persons, 0 Loans, 0 Companies
+2025-03-19 10:37:49,877 - root - INFO - Relationships loaded: 0 Primary, 0 CoApplicant, 0 Reference, 0 Company
+2025-03-19 10:40:53,753 - root - ERROR - Service stopped due to error: 'NoneType' object has no attribute 'sc'
+Traceback (most recent call last):
+  File ".\src\main.py", line 97, in main
+    time.sleep(1)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+AttributeError: 'NoneType' object has no attribute 'sc'

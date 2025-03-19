@@ -1,0 +1,239 @@
+2025-03-19 23:40:16,537 - root - INFO - Starting MongoDB to Neo4j sync service
+2025-03-19 23:40:16,538 - root - INFO - Sync interval: 5 minutes
+2025-03-19 23:40:16,538 - root - INFO - Starting full sync job at 2025-03-19 23:40:16.538992
+2025-03-19 23:40:23,402 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 23:40:23,514 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 23:40:23,531 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 23:40:23,532 - root - INFO - Extracting data from MongoDB...
+2025-03-19 23:40:29,448 - src.etl.extract - INFO - Extracted 50 records from Person
+2025-03-19 23:40:30,349 - src.etl.extract - INFO - Extracted 10 records from Company
+2025-03-19 23:40:31,346 - src.etl.extract - INFO - Extracted 93 records from Loan
+2025-03-19 23:40:32,233 - src.etl.extract - INFO - Extracted 57 records from PrimaryApplicant
+2025-03-19 23:40:33,115 - src.etl.extract - INFO - Extracted 93 records from Coapplicant
+2025-03-19 23:40:33,987 - src.etl.extract - INFO - Extracted 183 records from Reference
+2025-03-19 23:40:33,988 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 23:40:37,769 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(0) already exists with label `Person` and property `personId` = 'PERSON001'
+2025-03-19 23:40:39,278 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(1) already exists with label `Person` and property `personId` = 'PERSON002'
+2025-03-19 23:40:40,379 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(2) already exists with label `Person` and property `personId` = 'PERSON003'
+2025-03-19 23:40:41,533 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(3) already exists with label `Person` and property `personId` = 'PERSON004'
+2025-03-19 23:40:42,741 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(4) already exists with label `Person` and property `personId` = 'PERSON005'
+2025-03-19 23:40:43,797 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(5) already exists with label `Person` and property `personId` = 'PERSON006'
+2025-03-19 23:40:44,973 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(6) already exists with label `Person` and property `personId` = 'PERSON007'
+2025-03-19 23:40:46,081 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(7) already exists with label `Person` and property `personId` = 'PERSON008'
+2025-03-19 23:40:47,040 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(8) already exists with label `Person` and property `personId` = 'PERSON009'
+2025-03-19 23:40:48,107 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(9) already exists with label `Person` and property `personId` = 'PERSON010'
+2025-03-19 23:40:49,277 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(10) already exists with label `Person` and property `personId` = 'PERSON011'
+2025-03-19 23:40:50,333 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(11) already exists with label `Person` and property `personId` = 'PERSON012'
+2025-03-19 23:40:51,334 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(12) already exists with label `Person` and property `personId` = 'PERSON013'
+2025-03-19 23:40:52,348 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(13) already exists with label `Person` and property `personId` = 'PERSON014'
+2025-03-19 23:40:53,344 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(14) already exists with label `Person` and property `personId` = 'PERSON015'
+2025-03-19 23:40:54,349 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(15) already exists with label `Person` and property `personId` = 'PERSON016'
+2025-03-19 23:40:55,389 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(16) already exists with label `Person` and property `personId` = 'PERSON017'
+2025-03-19 23:40:56,603 - py4j.clientserver - INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-03-19 23:40:56,608 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:40:56,609 - root - INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 506, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+2025-03-19 23:40:56,749 - py4j.clientserver - INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-03-19 23:40:56,750 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:40:56,751 - root - INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 506, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+2025-03-19 23:40:58,657 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:40:58,658 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 506, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1053, in send_command
+    response = self.send_command(command, binary=binary)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-03-19 23:40:58,667 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:40:58,668 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 506, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1053, in send_command
+    response = self.send_command(command, binary=binary)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-03-19 23:40:58,675 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:40:58,675 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:40:58,796 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:40:58,798 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:40:58,799 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:41:00,711 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:41:00,713 - root - ERROR - Error during sync job: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\dataframe.py", line 1263, in collect
+    sock_info = self._jdf.collectToPython()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\errors\exceptions\captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o576.collectToPython
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\src\main.py", line 56, in run_sync_job
+    person_count = load_persons(spark, person_df, neo4j_client)
+  File "E:\internship\Contactibility Data Pipeline And Reporting System\PIPELINE\src\etl\load.py", line 29, in load_persons
+    roles = get_entity_roles(spark, person_id)
+  File "E:\internship\Contactibility Data Pipeline And Reporting System\PIPELINE\src\etl\transform.py", line 50, in get_entity_roles
+    is_coapplicant_row = spark.sql(f"""
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\dataframe.py", line 2997, in first
+    return self.head()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\dataframe.py", line 2973, in head
+    rs = self.head(1)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\dataframe.py", line 2975, in head
+    return self.take(n)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\dataframe.py", line 1407, in take
+    return self.limit(num).collect()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\dataframe.py", line 1263, in collect
+    sock_info = self._jdf.collectToPython()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\traceback_utils.py", line 81, in __exit__
+    self._context._jsc.setCallSite(None)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-03-19 23:41:00,723 - py4j.clientserver - INFO - Closing down clientserver connection

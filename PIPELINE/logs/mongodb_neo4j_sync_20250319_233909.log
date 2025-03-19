@@ -1,0 +1,110 @@
+2025-03-19 23:39:09,665 - root - INFO - Starting MongoDB to Neo4j sync service
+2025-03-19 23:39:09,665 - root - INFO - Sync interval: 5 minutes
+2025-03-19 23:39:09,665 - root - INFO - Starting full sync job at 2025-03-19 23:39:09.665841
+2025-03-19 23:39:35,499 - src.spark.session - INFO - Spark session created successfully
+2025-03-19 23:39:35,671 - src.graph.neo4j_client - INFO - Connected to Neo4j database
+2025-03-19 23:39:36,191 - src.graph.neo4j_client - INFO - Neo4j schema initialized
+2025-03-19 23:39:36,192 - root - INFO - Extracting data from MongoDB...
+2025-03-19 23:39:44,902 - src.etl.extract - INFO - Extracted 50 records from Person
+2025-03-19 23:39:46,086 - src.etl.extract - INFO - Extracted 10 records from Company
+2025-03-19 23:39:47,077 - src.etl.extract - INFO - Extracted 93 records from Loan
+2025-03-19 23:39:48,075 - src.etl.extract - INFO - Extracted 57 records from PrimaryApplicant
+2025-03-19 23:39:49,452 - src.etl.extract - INFO - Extracted 93 records from Coapplicant
+2025-03-19 23:39:50,455 - src.etl.extract - INFO - Extracted 183 records from Reference
+2025-03-19 23:39:50,456 - root - INFO - Loading nodes into Neo4j...
+2025-03-19 23:39:57,196 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(0) already exists with label `Person` and property `personId` = 'PERSON001'
+2025-03-19 23:39:58,644 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(1) already exists with label `Person` and property `personId` = 'PERSON002'
+2025-03-19 23:39:59,819 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(2) already exists with label `Person` and property `personId` = 'PERSON003'
+2025-03-19 23:40:00,931 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(3) already exists with label `Person` and property `personId` = 'PERSON004'
+2025-03-19 23:40:02,094 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(4) already exists with label `Person` and property `personId` = 'PERSON005'
+2025-03-19 23:40:03,166 - src.graph.neo4j_client - ERROR - Error upserting Person node: [Schema.ConstraintValidationFailed] Node(5) already exists with label `Person` and property `personId` = 'PERSON006'
+2025-03-19 23:40:04,299 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=848>
+2025-03-19 23:40:04,303 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:40:04,303 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=848>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-03-19 23:40:04,309 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\errors\exceptions\captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o23.sc
+2025-03-19 23:40:04,317 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:40:04,317 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\socket.py", line 681, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\errors\exceptions\captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o23.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-03-19 23:40:04,322 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-03-19 23:40:04,325 - root - ERROR - Error during sync job: An error occurred while calling o262.collectToPython
+Traceback (most recent call last):
+  File ".\src\main.py", line 56, in run_sync_job
+    person_count = load_persons(spark, person_df, neo4j_client)
+  File "E:\internship\Contactibility Data Pipeline And Reporting System\PIPELINE\src\etl\load.py", line 29, in load_persons
+    roles = get_entity_roles(spark, person_id)
+  File "E:\internship\Contactibility Data Pipeline And Reporting System\PIPELINE\src\etl\transform.py", line 58, in get_entity_roles
+    is_reference_row = spark.sql(f"""
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\dataframe.py", line 2997, in first
+    return self.head()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\dataframe.py", line 2973, in head
+    rs = self.head(1)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\dataframe.py", line 2975, in head
+    return self.take(n)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\dataframe.py", line 1407, in take
+    return self.limit(num).collect()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\sql\dataframe.py", line 1263, in collect
+    sock_info = self._jdf.collectToPython()
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\pyspark\errors\exceptions\captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "C:\Users\ADITI\anaconda3\envs\spark_env\lib\site-packages\py4j\protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o262.collectToPython
